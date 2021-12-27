@@ -1,4 +1,6 @@
-package com.magasin.Produits;
+package com.magasin.GDProduits.AltClassesJUNK;
+import com.magasin.GDProduits.Produits.Produit;
+
 import java.util.Vector;
 // Produits Vect
 public class ProduitsVect {

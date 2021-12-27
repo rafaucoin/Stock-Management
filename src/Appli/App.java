@@ -1,8 +1,8 @@
 package Appli;
-import com.magasin.Produits.SelectionCatPro;
+import com.magasin.GDProduits.INITAndSelectionCatPro;
 public class App {
     public static void main(String[] args) {
-        SelectionCatPro o=new SelectionCatPro();
+        INITAndSelectionCatPro o=new INITAndSelectionCatPro();
         o.afficher_Categories();
     }
 }

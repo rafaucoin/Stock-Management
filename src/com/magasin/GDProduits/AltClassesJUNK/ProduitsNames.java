@@ -1,4 +1,4 @@
-package com.magasin.Produits;
+package com.magasin.GDProduits.AltClassesJUNK;
 import java.util.HashMap;
 import java.util.Map;
 public class ProduitsNames {
