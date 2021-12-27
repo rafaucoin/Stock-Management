@@ -5,7 +5,7 @@ import java.util.Vector;
 public class Categorie {
     private final String Cat_Name;
     private Vector<String> Produits_Name = new Vector<>(3); // used to search if an exception ill be lifted after
-    private int nbProduitsName=1;
+   // private int nbProduitsName=1;
     private Vector<Produit> ProduitsVec = new Vector<>(); // size of Vector is the current Products number
     public Categorie(String Cat_Name) {
         this.Cat_Name=Cat_Name;
