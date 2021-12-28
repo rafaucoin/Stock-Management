@@ -1,10 +1,8 @@
 package com.magasin.GDProduits;
 import Exceptions.SelectionOutOfBondException;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
 public class INITAndSelectionCatPro {
     private Map<Integer,Categorie> Cat = new HashMap<>();
     public INITAndSelectionCatPro() {
@@ -32,7 +30,7 @@ public class INITAndSelectionCatPro {
     public void  afficher_Categories() {
         Cat.forEach((key, cat) -> System.out.println((key+"-"+cat.getCat_Name()))); // Cat.size() to get size **
     }
-    public int Select_Categorie() {
+    public int  Select_Categorie() {
         Scanner scn=new Scanner(System.in);
         int S=0;
         boolean v;
@@ -52,8 +50,12 @@ public class INITAndSelectionCatPro {
         return S;
     }
     // Print Every Name of pruduct in the categorie
-    public static void Console_Clear() { // not Working Yet *******
+    public static void Console_Clear() { // not Working*******
         System.out.print("\033[H\033[2J");
         System.out.flush();
+    }
+
+    public Categorie getCat(Integer i) {
+        return Cat.get(i);
     }
 }

@@ -22,7 +22,7 @@ public class Categorie {
     public void Remove_Produit(int Index) {
         Produits_Name.remove(Index);
     }
-    public Vector<Produit> Recherche_Type_Return_Vector(String Pro_Typ) {
+    public Vector<Produit> Return_Vector_Of_ProType(String Pro_Typ) {
         Vector<Produit> Results= new Vector<Produit>();
         int i;
         if(Pro_Typ!=null) {
