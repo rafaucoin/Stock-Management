@@ -1,10 +1,14 @@
 package com.magasin.GDProduits;
+import Exceptions.SelectionOutOfBondException;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
+
 public class INITAndSelectionCatPro {
     private Map<Integer,Categorie> Cat = new HashMap<>();
     public INITAndSelectionCatPro() {
-        // 5 Catégoris Initiale Adding a Add_Methode for new Categories in The Future *****
+        // 5 Catégoris Initiale Adding a Add_Methode for new Categories After *****
         Cat.put(1,new Categorie("Mobiles"));
         // ***** Adding Products name
         Cat.get(1).add_NewProduitName("Tablette tactiles");
@@ -28,8 +32,27 @@ public class INITAndSelectionCatPro {
     public void  afficher_Categories() {
         Cat.forEach((key, cat) -> System.out.println((key+"-"+cat.getCat_Name()))); // Cat.size() to get size **
     }
+    public int Select_Categorie() {
+        Scanner scn=new Scanner(System.in);
+        int S=0;
+        boolean v;
+        do {
+            afficher_Categories();
+            v = true;
+            try {
+                S = scn.nextInt();
+                if (S < 1 || S > Cat.size())
+                    throw new SelectionOutOfBondException("Erreur tu as entrée une selection Invalid");
+            } catch (SelectionOutOfBondException e) {
+                System.out.println(e.getMessage());
+                v = false;
+            }
+            Console_Clear();
+        }while(!v);
+        return S;
+    }
     // Print Every Name of pruduct in the categorie
-    public static void Console_Clear() { // not Tested Yet *******
+    public static void Console_Clear() { // not Working Yet *******
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }

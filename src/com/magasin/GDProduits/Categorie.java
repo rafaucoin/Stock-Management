@@ -22,4 +22,15 @@ public class Categorie {
     public void Remove_Produit(int Index) {
         Produits_Name.remove(Index);
     }
+    public Vector<Produit> Recherche_Type_Return_Vector(String Pro_Typ) {
+        Vector<Produit> Results= new Vector<Produit>();
+        int i;
+        if(Pro_Typ!=null) {
+            for(i=0 ; i< ProduitsVec.size(); i++) {
+                if(Pro_Typ.equalsIgnoreCase(ProduitsVec.get(i).Pro_Typ))
+                    Results.add(ProduitsVec.get(i));
+            }
+        }
+        return  Results;
+    }
 }
