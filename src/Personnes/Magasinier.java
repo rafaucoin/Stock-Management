@@ -19,6 +19,6 @@ private void Ajoute_Produit() {
 private Produit LireProduit(int i) {
     Produit P;
     String cat;
-    switch(cat.toLowerCase()
+    switch(cat.toLowerCase())
 }
 }
