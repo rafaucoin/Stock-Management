@@ -21,7 +21,7 @@ public class INITAndSelectionCatPro {
 
         Cat.put(4,new Categorie("Informatiques"));
         // ***** Adding Products Name
-        Cat.get(4).add_NewProduitName("Pc Portable");
+        Cat.get(4).add_NewProduitName("Pc Bureau");
 
         Cat.put(5,new Categorie("Kits solaires"));
         // ***** Adding Products Name

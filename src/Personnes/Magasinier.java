@@ -1,8 +1,7 @@
 package Personnes;
 import com.magasin.GDProduits.Categorie;
 import com.magasin.GDProduits.INITAndSelectionCatPro;
-import com.magasin.GDProduits.Produits.Mobile;
-import com.magasin.GDProduits.Produits.Produit;
+import com.magasin.GDProduits.Produits.*;
 public class Magasinier {
 INITAndSelectionCatPro obj;
 Magasinier(INITAndSelectionCatPro obj) {
@@ -12,7 +11,6 @@ private void Ajoute_Produit() {
  int selection =obj.Select_Categorie();
     Categorie ob=obj.getCat(selection);
     ob.Add_Produit(LireProduit(selection));
-
 }
 private  Produit LireProduit(int i) {
     Produit P;
@@ -22,16 +20,16 @@ private  Produit LireProduit(int i) {
             P=new Mobile(/*args*/);
             break;
         case "electroniques":
-
+            P=new Televiseurs();
             break;
         case "electroménager":
-
+            P=new ModulePhotovoltaique();
             break;
         case "informatiques":
-
+            P=new PcBureau();
             break;
         case "kits solaires":
-
+            P=new ModulePhotovoltaique();
             break;
 
     }
