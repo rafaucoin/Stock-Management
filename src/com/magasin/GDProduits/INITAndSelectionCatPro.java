@@ -13,11 +13,11 @@ public class INITAndSelectionCatPro {
 
         Cat.put(2,new Categorie("Electroniques"));
         // ***** Adding Products Name
-        Cat.get(2).add_NewProduitName("Télévisions");
+        Cat.get(2).add_NewProduitName("Télévision");
 
         Cat.put(3,new Categorie("Electroménager"));
         // ***** Adding Products Name
-        Cat.get(3).add_NewProduitName("Climatiseurs");
+        Cat.get(3).add_NewProduitName("Climatiseur");
 
         Cat.put(4,new Categorie("Informatiques"));
         // ***** Adding Products Name
@@ -25,7 +25,7 @@ public class INITAndSelectionCatPro {
 
         Cat.put(5,new Categorie("Kits solaires"));
         // ***** Adding Products Name
-        Cat.get(5).add_NewProduitName("Batteries solaires");
+        Cat.get(5).add_NewProduitName("Batteries solaire");
     }
     public void  afficher_Categories() {
         Cat.forEach((key, cat) -> System.out.println((key+"-"+cat.getCat_Name()))); // Cat.size() to get size **
