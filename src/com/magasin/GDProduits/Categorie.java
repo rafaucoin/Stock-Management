@@ -4,7 +4,7 @@ import java.util.Vector;
 // Struct Alternative
 public class Categorie {
     private final String Cat_Name;
-    private Vector<String> Produits_Name = new Vector<>(3); // used to search if an exception ill be lifted after
+    private Vector<String> Produits_Type = new Vector<>(); // used to search if an exception ill be lifted after
    // private int nbProduitsName=1;
     private Vector<Produit> ProduitsVec = new Vector<>(); // size of Vector is the current Products number
     public Categorie(String Cat_Name) {
@@ -14,13 +14,13 @@ public class Categorie {
         return Cat_Name;
     }
     public void add_NewProduitName(String Name) {
-        Produits_Name.add(Name);
+        Produits_Type.add(Name);
     }
     public void Add_Produit(Produit P) {
         ProduitsVec.add(P);
     }
     public void Remove_Produit(int Index) {
-        Produits_Name.remove(Index);
+        Produits_Type.remove(Index);
     }
     public Vector<Produit> Return_Vector_Of_ProType(String Pro_Typ) {
         Vector<Produit> Results= new Vector<Produit>();
@@ -32,5 +32,15 @@ public class Categorie {
             }
         }
         return  Results;
+    }
+    public boolean Recherche_ProduitName(String str) {
+        for(int i = 0; i< Produits_Type.size(); i++) {
+            if(Produits_Type.get(i).equalsIgnoreCase(str))
+                return true;
+        }
+        return false;
+    }
+    public void afficher_ProduitsType() {
+        Produits_Type.forEach(System.out::println);
     }
 }

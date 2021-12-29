@@ -1,4 +1,5 @@
 package Personnes;
+import Exceptions.InvalidProduitTypeException;
 import com.magasin.GDProduits.Categorie;
 import com.magasin.GDProduits.INITAndSelectionCatPro;
 import com.magasin.GDProduits.Produits.*;
@@ -14,6 +15,7 @@ public class Magasinier {
         ob.Add_Produit(LireProduit(selection));
     }
     private Produit LireProduit(int i) {
+        boolean v;
         Produit P=null;
         int in;
         Scanner scn = new Scanner(System.in);
@@ -23,16 +25,28 @@ public class Magasinier {
         System.out.println("Référence de Produit :");
         Ref=scn.next();
         System.out.println("Description de Produit :");
-        Des=scn.next();
+        scn.next();
+        Des=scn.nextLine();
         System.out.println("Prix de Produit :");
         double Price = scn.nextDouble();
         String cat = obj.getCat(i).getCat_Name().toLowerCase();
-        // ill put here here
+        do {
+            ProduitType = scn.next();
+            v=true;
+            try {
+                if(!(obj.getCat(i).Recherche_ProduitName(ProduitType)))
+                    throw new InvalidProduitTypeException("Ce Type de Produit n'Exist Pas");
+            }
+            catch (InvalidProduitTypeException o) {
+                System.out.println(o.getMessage());
+                v=false;
+            }
+        }while(!v);
         switch (cat) {
             case "mobiles":
-                ProduitType=scn.next(); // exception will be handled here ***
+                //ProduitType=scn.next(); // exception will be handled here ***
                 switch (ProduitType.toLowerCase()) {
-                    case "mobile":
+                    case "téléphone mobile":
                         P = new Mobile(ProduitType, Name, Ref, Des, Price);
                         break;
                 }
@@ -41,11 +55,11 @@ public class Magasinier {
                 break;
         case "electroniques":
             // switch
-            ProduitType=scn.next();
+            //ProduitType=scn.next();
             P=new Televiseurs("Télévision", Name, Ref, Des, Price);
             break;
         case "electroménager":
-            ProduitType=scn.next();
+            //ProduitType=scn.next();
             switch (ProduitType.toLowerCase()) {
                 case "climatiseur":
                     P = new Climatiseurs(ProduitType, Name, Ref, Des, Price);
@@ -54,11 +68,11 @@ public class Magasinier {
             }
             break;
         case "informatiques":
-            ProduitType=scn.next();
+            //ProduitType=scn.next();
             P=new PcBureau(ProduitType, Name, Ref, Des, Price);
             break;
         case "kits solaires":
-            ProduitType=scn.next();
+            //ProduitType=scn.next();
             P=new ModulePhotovoltaique(ProduitType, Name, Ref, Des, Price);
             break;
 

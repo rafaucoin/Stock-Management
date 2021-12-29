@@ -9,7 +9,7 @@ public class INITAndSelectionCatPro {
         // 5 Catégoris Initiale Adding a Add_Methode for new Categories After *****
         Cat.put(1,new Categorie("Mobiles"));
         // ***** Adding Products name
-        Cat.get(1).add_NewProduitName("Tablette tactiles");
+        Cat.get(1).add_NewProduitName("Phone");
 
         Cat.put(2,new Categorie("Electroniques"));
         // ***** Adding Products Name
