@@ -66,16 +66,33 @@ public class INITAndSelectionCatPro {
         }while(!v);
         return S;
     }
-    // Print Every Name of pruduct in the categorie
+    public int Select_ProduitType() {
+        boolean v;
+        int cat=Select_Categorie(),selection;
+        Scanner scn=new Scanner(System.in);
+        do {
+           v=true;
+           Cat.get(cat).afficher_ProduitsType();
+           selection= scn.nextInt();
+           try {
+               if(selection < 1 ||selection >Cat.get(cat).sizeVect())
+                   throw new SelectionOutOfBondException("Erreur tu as entrée une selection Invalid");
+           }
+           catch (SelectionOutOfBondException e) {
+               System.out.println(e.getMessage());
+               v=false;
+           }
+        }while(!v);
+        return selection;
+    }
     public Produit LireProduit(int i) {
-    Produit P=null;
+    Produit P;
     return P;
     }
     public static void Console_Clear() { // not Working*******
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
-
     public Categorie getCat(Integer i) {
         return Cat.get(i);
     }

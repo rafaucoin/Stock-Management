@@ -24,4 +24,7 @@ public class Categorie {
     public void afficher_ProduitsType() {
         Produits_Type.forEach((key, Type) -> System.out.println((key+"-"+Type.Pro_Type)));
     }
+    public int sizeVect() {
+        return Produits_Type.size();
+    }
 }
