@@ -1,85 +1,20 @@
 package Personnes;
-import Exceptions.InvalidProduitTypeException;
-import com.magasin.GDProduits.Categorie;
 import com.magasin.GDProduits.INITAndSelectionCatPro;
 import com.magasin.GDProduits.Produits.*;
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 public class Magasinier {
     INITAndSelectionCatPro obj;
-   public Magasinier(INITAndSelectionCatPro obj) {
+    private final Map<Integer,Produit> FileDeProduits= new HashMap<>();
+    public Magasinier(INITAndSelectionCatPro obj) {
         this.obj = obj;
     }
     public void Ajoute_Produit() {
-        int selection = obj.Select_Categorie();
-        Categorie ob = obj.getCat(selection);
-        ob.Add_Produit(LireProduit(selection));
-    }
-    private Produit LireProduit(int i) {
-        boolean v;
-        Produit P=null;
-        int in;
-        Scanner scn = new Scanner(System.in);
-        String str, Name, Ref, Des,ProduitType;
-        System.out.println("Nom de Produit :");
-        Name=scn.next();
-        System.out.println("Référence de Produit :");
-        Ref=scn.next();
-        System.out.println("Description de Produit :");
-        scn.next();
-        Des=scn.nextLine();
-        System.out.println("Prix de Produit :");
-        double Price = scn.nextDouble();
-        String cat = obj.getCat(i).getCat_Name().toLowerCase();
-        do {
-            ProduitType = scn.next();
-            v=true;
-            try {
-                if(!(obj.getCat(i).Recherche_ProduitName(ProduitType)))
-                    throw new InvalidProduitTypeException("Ce Type de Produit n'Exist Pas");
-            }
-            catch (InvalidProduitTypeException o) {
-                System.out.println(o.getMessage());
-                v=false;
-            }
-        }while(!v);
-        switch (cat) {
-            case "mobiles":
-                //ProduitType=scn.next(); // exception will be handled here ***
-                switch (ProduitType.toLowerCase()) {
-                    case "téléphone mobile":
-                        P = new Mobile(ProduitType, Name, Ref, Des, Price);
-                        break;
-                }
-                // scan Produit Type apres un autre switch case pour ajout des autres attribues
+       int selection = obj.Select_Categorie();
+        obj.getCat(selection).Add_Produit(obj.LireProduit(selection));
+    } // interface Possibility with client
+        //private void  Supression_Produit() {
+   /* private Produit Recherche_Produit(String Ref) {
 
-                break;
-        case "electroniques":
-            // switch
-            //ProduitType=scn.next();
-            P=new Televiseurs("Télévision", Name, Ref, Des, Price);
-            break;
-        case "electroménager":
-            //ProduitType=scn.next();
-            switch (ProduitType.toLowerCase()) {
-                case "climatiseur":
-                    P = new Climatiseurs(ProduitType, Name, Ref, Des, Price);
-                    break;
-
-            }
-            break;
-        case "informatiques":
-            //ProduitType=scn.next();
-            P=new PcBureau(ProduitType, Name, Ref, Des, Price);
-            break;
-        case "kits solaires":
-            //ProduitType=scn.next();
-            P=new ModulePhotovoltaique(ProduitType, Name, Ref, Des, Price);
-            break;
-
-    }
-            return P;
-        }
-/*private void  Supression_Produit() {
-
-} */
+    }*/
     }

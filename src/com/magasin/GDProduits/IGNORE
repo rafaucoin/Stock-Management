@@ -37,3 +37,105 @@
         Temp.Add_Produit_Name("");
         Temp.Add_Produit_Name("");
         Temp.Add_Produit_Name(""); */
+
+         /* public Vector<Produit> Return_Vector_Of_ProType(String Pro_Typ) {
+                Vector<Produit> Results= new Vector<Produit>();
+                int i;
+                if(Pro_Typ!=null) {
+                    for(i=0 ; i< ProduitsVec.size(); i++) {
+                        if(Pro_Typ.equalsIgnoreCase(ProduitsVec.get(i).Pro_Typ))
+                            Results.add(ProduitsVec.get(i));
+                    }
+                }
+                return  Results;
+            } */
+
+            public boolean Recherche_ProduitType(String str) {
+                    for(int i = 0; i< Produits_Type.size(); i++) {
+                        if(Produits_Type.get(i).equalsIgnoreCase(str))
+                            return true;
+                    }
+                    return false;
+
+                     // 5 Catégoris Initiale Adding a Add_Methode for new Categories After *****
+                           /* Cat.put(1,new Categorie("Mobiles"));
+                            // ***** Adding Products name
+
+
+                            Cat.put(2,new Categorie("Electroniques"));
+                            // ***** Adding Products Name
+
+
+                            Cat.put(3,new Categorie("Electroménager"));
+                            // ***** Adding Products Name
+
+
+                            Cat.put(4,new Categorie("Informatiques"));
+                            // ***** Adding Products Name
+
+
+                            Cat.put(5,new Categorie("Kits solaires"));
+
+
+
+                             boolean v;
+                                    Produit P=null;
+                                    Scanner scn = new Scanner(System.in);
+                                    String str, Name, Ref, Des,ProduitType;
+                                    //Cat.get(1).Return_Vector_Of_ProType()
+                                    do {
+                                        System.out.println("Type de Produit :");
+                                        ProduitType = scn.next();
+                                        v=true;
+                                        try {
+                                            if(!(getCat(i).Recherche_ProduitType(ProduitType)))
+                                                throw new InvalidProduitTypeException("Ce Type de Produit n'Exist Pas");
+                                        }
+                                        catch (InvalidProduitTypeException o) {
+                                            System.out.println(o.getMessage());
+                                            v=false;
+                                        }
+                                    }while(!v);
+                                    System.out.println("Nom de Produit :");
+                                    Name=scn.next();
+                                    System.out.println("Référence de Produit :");
+                                    Ref=scn.next();
+                                    System.out.println("Description de Produit :");
+                                    scn.next();
+                                    Des=scn.nextLine();
+                                    System.out.println("Prix de Produit :");
+                                    double Price = scn.nextDouble();
+                                    String cat = getCat(i).getCat_Name().toLowerCase();
+                                    switch (cat) {
+                                        case "mobiles":
+                                            switch (ProduitType.toLowerCase()) {
+                                                case "téléphone mobile":
+                                                    P = new Mobile(ProduitType, Name, Ref, Des, Price);
+                                                    break;
+                                            }
+                                            // scan Produit Type apres un autre switch case pour ajout des autres attribues
+
+                                            break;
+                                        case "electroniques":
+                                            // switch
+                                            P=new Televiseurs("Télévision", Name, Ref, Des, Price);
+                                            break;
+                                        case "electroménager":
+                                            //ProduitType=scn.next();
+                                            switch (ProduitType.toLowerCase()) {
+                                                case "climatiseur":
+                                                    P = new Climatiseurs(ProduitType, Name, Ref, Des, Price);
+                                                    break;
+
+                                            }
+                                            break;
+                                        case "informatiques":
+                                            P=new PcBureau(ProduitType, Name, Ref, Des, Price);
+                                            break;
+                                        case "kits solaires":
+
+                                            P=new ModulePhotovoltaique(ProduitType, Name, Ref, Des, Price);
+                                            break;
+
+                                    }
+                                    return P;
