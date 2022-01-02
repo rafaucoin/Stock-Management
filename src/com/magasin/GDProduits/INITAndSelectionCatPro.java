@@ -4,6 +4,7 @@ import com.magasin.GDProduits.Produits.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Vector;
 public class INITAndSelectionCatPro {
     private final Map<Integer,Categorie> Cat = new HashMap<>();
     public INITAndSelectionCatPro() {
@@ -95,5 +96,19 @@ public class INITAndSelectionCatPro {
     }
     public Categorie getCat(Integer i) {
         return Cat.get(i);
+    }
+    public Vector<Produit> Recherche() {
+    Indices P=new Indices();
+    P.i_cat=Select_Categorie();
+    P.i_prot=Select_ProduitType();
+    switch(Cat.get(P.i_cat).getCat_Name().toLowerCase()) {
+        case "mobile" :   break;
+
+
+        case "electronique" : break;
+    }
+    }
+    private class Indices { // Inner Class
+        public int i_cat, i_prot,int_pro;
     }
 }

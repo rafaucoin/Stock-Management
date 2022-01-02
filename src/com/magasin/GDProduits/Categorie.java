@@ -1,6 +1,4 @@
 package com.magasin.GDProduits;
-import com.magasin.GDProduits.Produits.Produit;
-
 import java.util.HashMap;
 import java.util.Map;
 // Struct Alternative
