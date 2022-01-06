@@ -11,7 +11,15 @@ public class Magasinier {
     }
     public void Ajoute_Produit() {
        int selection = obj.Select_Categorie();
-        obj.getCat(selection).Add_Produit(obj.LireProduit(selection));
+       int TypeSel = obj.Select_ProduitType();
+
+
+
+
+
+
+
+
     } // interface Possibility with client
         //private void  Supression_Produit() {
    /* private Produit Recherche_Produit(String Ref) {

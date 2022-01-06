@@ -1,15 +1,13 @@
 package com.magasin.GDProduits.Produits;
-public class Produit {
-    public final String Name,Ref,Pro_Typ;// Ref=Référence
+public abstract class Produit {
+    public final String Name,Ref;// Ref=Référence
     public  String Descriptive;
     private int nbProduit=0;
     private double Price;
-    public Produit(String Pro_Typ,String Name,String Ref,String Descriptive,double Price) {
-        this.Pro_Typ=Pro_Typ;
+    public Produit(String Name,String Ref,String Descriptive) {
         this.Descriptive = Descriptive;
         this.Ref=Ref;
         this.Name=Name;
-        this.Price=Price;
     }
     public void IncNb() {
         nbProduit++;
@@ -19,4 +17,5 @@ public class Produit {
         nbProduit--;
         // exception ********
     }
+    public abstract  void Affiche_Produit();
 }

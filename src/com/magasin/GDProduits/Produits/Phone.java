@@ -1,12 +1,12 @@
 package com.magasin.GDProduits.Produits;
-public class Mobile extends Produit {
+public class Phone extends Produit {
     //caract
-    private int Ram,Stockage,Cam_Ar,Cam_Av;
+    private int Ram,Stockage;
     private String Cpu,Gpu;
-    public Mobile(String Pro_Typ, String Name, String Ref, String Descriptive, double Price) {
-        super(Pro_Typ, Name, Ref, Descriptive, Price);
+    public Phone(String Name, String Ref, String Descriptive) {
+        super(Name, Ref, Descriptive);
     }
-    public int getRam() {
+    /* public int getRam() {
         return Ram;
     }
     public void setRam(int ram) {
@@ -41,5 +41,5 @@ public class Mobile extends Produit {
     }
     public String getCpu() {
         return Cpu;
-    }
+    } */
 }

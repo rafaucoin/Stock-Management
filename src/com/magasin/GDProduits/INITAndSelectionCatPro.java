@@ -86,8 +86,94 @@ public class INITAndSelectionCatPro {
         }while(!v);
         return selection;
     }
-    public Produit LireProduit(int i) {
+    public Produit LireProduit(int Type,int Selct) {
     Produit P;
+    Scanner Scn=new Scanner(System.in);
+    String s1,s2,s3,s4,s5;
+        System.out.println("Name=");
+        s1 = Scn.next();
+        System.out.println("Référence=");
+        s2 = Scn.next();
+        System.out.println("Description=");
+        s3 = Scn.next();
+    switch (Selct) {
+        case 1 :
+                switch (Type) {
+                    case 1 :
+                        P=new Phone(s1,s2,s3);
+                        break;
+                    case 2 :
+                        break;
+
+                    case 3 :
+                        break;
+                    case 4 :
+                        break;
+                    case 5 :
+                        break;
+                }
+                break;
+        case 2 :
+            switch (Type) {
+                case 1 :
+                    break;
+                case 2 :
+                    break;
+
+                case 3 :
+                    break;
+                case 4 :
+                    break;
+                case 5 :
+                    break;
+            }
+            break;
+        case 3 :
+            switch (Type) {
+                case 1 :
+                    break;
+                case 2 :
+                    break;
+
+                case 3 :
+                    break;
+                case 4 :
+                    break;
+                case 5 :
+                    break;
+            }
+            break;
+        case 4 :
+            switch (Type) {
+                case 1 :
+                    break;
+                case 2 :
+                    break;
+
+                case 3 :
+                    break;
+                case 4 :
+                    break;
+                case 5 :
+                    break;
+            }
+            break;
+        case 5 :
+            switch (Type) {
+                case 1 :
+                    break;
+                case 2 :
+                    break;
+
+                case 3 :
+                    break;
+                case 4 :
+                    break;
+                case 5 :
+                    break;
+            }
+            break;
+    }
     return P;
     }
     public static void Console_Clear() { // not Working*******
@@ -97,7 +183,7 @@ public class INITAndSelectionCatPro {
     public Categorie getCat(Integer i) {
         return Cat.get(i);
     }
-    public Vector<Produit> Recherche() {
+   /* public Vector<Produit> Recherche() {
     Indices P=new Indices();
     P.i_cat=Select_Categorie();
     P.i_prot=Select_ProduitType();
@@ -107,7 +193,8 @@ public class INITAndSelectionCatPro {
 
         case "electronique" : break;
     }
-    }
+    } !
+    */
     private class Indices { // Inner Class
         public int i_cat, i_prot,int_pro;
     }
