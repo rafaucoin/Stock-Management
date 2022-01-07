@@ -4,8 +4,8 @@ import com.magasin.GDProduits.Produits.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-public class INITAndSelectionCatPro {
-    public  final Map<Integer,Categorie> Cat = new HashMap<>();
+public  class INITAndSelectionCatPro {
+    public static final Map<Integer,Categorie> Cat = new HashMap<>();
     public INITAndSelectionCatPro() {
         // ***** Adding Products Name */
         Cat.put(1,new Categorie("Mobiles"));
@@ -44,10 +44,10 @@ public class INITAndSelectionCatPro {
         Cat.get(5).Add_NewProduitType("batteries solaires");
         Cat.get(5).Add_NewProduitType("regulateurs de charge solaires");
     }
-    public void  afficher_Categories() {
+    public static void  afficher_Categories() {
         Cat.forEach((key, cat) -> System.out.println((key+"-"+cat.getCat_Name()))); // Cat.size() to get size **
     }
-    public int  Select_Categorie() {
+    private static int  Select_Categorie() {
         Scanner scn=new Scanner(System.in);
         int S=0;
         boolean v;
@@ -65,7 +65,7 @@ public class INITAndSelectionCatPro {
         }while(!v);
         return S;
     }
-    public int Select_ProduitType(int cat) {
+    private static int Select_ProduitType(int cat) {
         boolean v;
         int selection;
         Scanner scn=new Scanner(System.in);
@@ -84,7 +84,11 @@ public class INITAndSelectionCatPro {
         }while(!v);
         return selection;
     }
-    public Produit LireProduit(int Type,int Selct) {
+    public static IndexCouple Selection() {
+        int i=Select_Categorie(),j=Select_ProduitType(i);
+        return new IndexCouple(i,j);
+    }
+    public static Produit LireProduit(int Type,int Selct) {
     Produit P=null;
     Scanner Scn=new Scanner(System.in);
     String s1,s2,s3,s4,s5;
