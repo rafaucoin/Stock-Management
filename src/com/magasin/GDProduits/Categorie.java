@@ -5,7 +5,7 @@ import java.util.Map;
 public class Categorie {
     private final String Cat_Name;
     private static int index=1;
-    private final Map<Integer,ProduitTypeVect> Produits_Type = new HashMap<>(); // size of Vector is the current Products number
+    public final Map<Integer,ProduitTypeVect> Produits_Type = new HashMap<>(); // size of Vector is the current Products number
     public Categorie(String Cat_Name) {
         this.Cat_Name=Cat_Name;
     }

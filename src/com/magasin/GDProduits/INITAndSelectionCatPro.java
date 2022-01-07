@@ -4,15 +4,14 @@ import com.magasin.GDProduits.Produits.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Vector;
 public class INITAndSelectionCatPro {
-    private final Map<Integer,Categorie> Cat = new HashMap<>();
+    public  final Map<Integer,Categorie> Cat = new HashMap<>();
     public INITAndSelectionCatPro() {
         // ***** Adding Products Name */
         Cat.put(1,new Categorie("Mobiles"));
         // add Products Names Of Mobile Cat ****
         Cat.get(1).Add_NewProduitType("Tablette tactile");
-        Cat.get(1).Add_NewProduitType(" Télephone mobile");
+        Cat.get(1).Add_NewProduitType("Télephone mobile");
         Cat.get(1).Add_NewProduitType("Smartwatch,");
         Cat.get(1).Add_NewProduitType("Kids Watch");
         Cat.put(2,new Categorie("Electroniques"));
@@ -63,13 +62,12 @@ public class INITAndSelectionCatPro {
                 System.out.println(e.getMessage());
                 v = false;
             }
-            Console_Clear();
         }while(!v);
         return S;
     }
-    public int Select_ProduitType() {
+    public int Select_ProduitType(int cat) {
         boolean v;
-        int cat=Select_Categorie(),selection;
+        int selection;
         Scanner scn=new Scanner(System.in);
         do {
            v=true;
@@ -87,22 +85,29 @@ public class INITAndSelectionCatPro {
         return selection;
     }
     public Produit LireProduit(int Type,int Selct) {
-    Produit P;
+    Produit P=null;
     Scanner Scn=new Scanner(System.in);
     String s1,s2,s3,s4,s5;
-        System.out.println("Name=");
+    int i1,i2;
+        System.out.print("Name=");
         s1 = Scn.next();
-        System.out.println("Référence=");
-        s2 = Scn.next();
-        System.out.println("Description=");
+        System.out.print("Référence=");
+        s2=Scn.next();
+        System.out.print("Description=");
         s3 = Scn.next();
     switch (Selct) {
         case 1 :
                 switch (Type) {
                     case 1 :
-                        P=new Phone(s1,s2,s3);
                         break;
                     case 2 :
+                        System.out.print("Cpu : ");
+                        s4 = Scn.next();
+                        System.out.print("Ram en (GB) : ");
+                        i1 = Scn.nextInt();
+                        System.out.print("Stockage en (GB) : ");
+                        i2 = Scn.nextInt();
+                        P=new Phone(s1,s2,s3,s4,i1,i2);
                         break;
 
                     case 3 :
@@ -175,27 +180,5 @@ public class INITAndSelectionCatPro {
             break;
     }
     return P;
-    }
-    public static void Console_Clear() { // not Working*******
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-    public Categorie getCat(Integer i) {
-        return Cat.get(i);
-    }
-   /* public Vector<Produit> Recherche() {
-    Indices P=new Indices();
-    P.i_cat=Select_Categorie();
-    P.i_prot=Select_ProduitType();
-    switch(Cat.get(P.i_cat).getCat_Name().toLowerCase()) {
-        case "mobile" :   break;
-
-
-        case "electronique" : break;
-    }
-    } !
-    */
-    private class Indices { // Inner Class
-        public int i_cat, i_prot,int_pro;
     }
 }

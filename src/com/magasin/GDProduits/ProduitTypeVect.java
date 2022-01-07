@@ -4,7 +4,7 @@ import java.util.Vector;
 // Produits Vect
 public class ProduitTypeVect {
     public final String Pro_Type;
-    private Vector<Produit> Pro_=new Vector<>();
+    public  final Vector<Produit> Pro_=new Vector<>();
     public ProduitTypeVect(String name) {
         Pro_Type=name;
     }
@@ -13,5 +13,12 @@ public class ProduitTypeVect {
     }
     public void Remove_Produit(int Index) {
         Pro_.remove(Index);
+    }
+    public boolean RechercheRef(String Ref) {
+        for(Produit P : Pro_) {
+            if (P.Ref.equalsIgnoreCase(Ref))
+                    return true;
+        }
+        return false;
     }
 }

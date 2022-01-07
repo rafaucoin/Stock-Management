@@ -7,5 +7,6 @@ public class App {
         Magasinier m=new Magasinier(o);
         //System.out.println(o.Select_Categorie());
         m.Ajoute_Produit();
+        m.Recherche_by_ref();
     }
 }
