@@ -4,7 +4,7 @@ import java.util.Vector;
 // Produits Vect
 public class ProduitTypeVect {
     public final String Pro_Type;
-    public  final Vector<Produit> Pro_=new Vector<>();
+    private final Vector<Produit> Pro_=new Vector<>();
     public ProduitTypeVect(String name) {
         Pro_Type=name;
     }
@@ -20,5 +20,15 @@ public class ProduitTypeVect {
                     return true;
         }
         return false;
+    }
+    public int  RechercheProduit(Produit P) {
+        for(Produit O : Pro_) {
+            if(O.equals(P))
+                return Pro_.indexOf(O);
+        }
+        return -1;
+    }
+    public Produit ReturnProduit(int Index) {
+        return Pro_.get(Index);
     }
 }

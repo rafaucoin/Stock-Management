@@ -1,19 +1,24 @@
 package Personnes;
 import com.magasin.GDProduits.INITAndSelectionCatPro;
 import com.magasin.GDProduits.Produits.*;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 public class Magasinier {
     INITAndSelectionCatPro obj;
-    private final Map<Integer,Produit> FileDeProduits= new HashMap<>();
+    // private final Map<Integer,Produit> FileDeProduits= new HashMap<>();
     public Magasinier(INITAndSelectionCatPro obj) {
         this.obj = obj;
     }
     public void Ajoute_Produit() {
        int selection = obj.Select_Categorie();
        int TypeSel = obj.Select_ProduitType(selection);
-       (obj.Cat.get(selection)).Produits_Type.get(TypeSel).Add_Produit(obj.LireProduit(TypeSel,selection));
+       Produit P = obj.LireProduit(TypeSel,selection);
+       int Tr=obj.Cat.get(selection).Produits_Type.get(TypeSel).RechercheProduit(P);
+       if(Tr!= -1) {
+           System.out.println("Trouvé");
+           obj.Cat.get(selection).Produits_Type.get(TypeSel).ReturnProduit(Tr).IncNb();
+       }
+       else
+           obj.Cat.get(selection).Produits_Type.get(TypeSel).Add_Produit(P);
     } // interface Possibility with client
         //private void  Supression_Produit() {
     public void  Recherche_by_ref() {
@@ -23,6 +28,7 @@ public class Magasinier {
         int type=obj.Select_ProduitType(selc);
         System.out.print("Référence :");
         s=scn.next();
-        System.out.print(obj.Cat.get(selc).Produits_Type.get(type).RechercheRef(s));
+        System.out.println(obj.Cat.get(selc).Produits_Type.get(type).RechercheRef(s));
     }
+
     }

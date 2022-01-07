@@ -18,4 +18,14 @@ public abstract class Produit {
         // exception ********
     }
     public abstract  void Affiche_Produit();
+
+    /*public boolean Equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Produit)) return false;
+
+        Produit produit = (Produit) o;
+
+        if (!Name.equals(produit.Name)) return false;
+        return Ref.equals(produit.Ref);
+    } */
 }
