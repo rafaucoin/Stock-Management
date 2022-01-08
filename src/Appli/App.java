@@ -1,5 +1,9 @@
 package Appli;
 import Personnes.Magasinier;
+import java.lang.Thread;
+
+import java.util.InputMismatchException;
+
 import com.magasin.GDProduits.INITAndSelectionCatPro;
 public class App {
     public static void main(String[] args) throws InterruptedException {
