@@ -44,10 +44,10 @@ public  class INITAndSelectionCatPro {
         Cat.get(5).Add_NewProduitType("batteries solaires");
         Cat.get(5).Add_NewProduitType("regulateurs de charge solaires");
     }
-    public static void  afficher_Categories() {
+    public  void  afficher_Categories() {
         Cat.forEach((key, cat) -> System.out.println((key+"-"+cat.getCat_Name()))); // Cat.size() to get size **
     }
-    private static int  Select_Categorie() {
+    private  int  Select_Categorie() {
         Scanner scn=new Scanner(System.in);
         int S=0;
         boolean v;
@@ -65,7 +65,7 @@ public  class INITAndSelectionCatPro {
         }while(!v);
         return S;
     }
-    private static int Select_ProduitType(int cat) {
+    private  int Select_ProduitType(int cat) {
         boolean v;
         int selection;
         Scanner scn=new Scanner(System.in);
@@ -84,7 +84,7 @@ public  class INITAndSelectionCatPro {
         }while(!v);
         return selection;
     }
-    public static IndexCouple Selection() {
+    public  IndexCouple Selection() {
         int i=Select_Categorie(),j=Select_ProduitType(i);
         return new IndexCouple(i,j);
     }
