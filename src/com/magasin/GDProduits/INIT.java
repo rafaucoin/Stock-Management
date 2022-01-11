@@ -2,6 +2,7 @@ package com.magasin.GDProduits;
 import com.magasin.GDProduits.Exceptions.*;
 import com.magasin.GDProduits.Produits.*;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 public class INIT {
@@ -55,10 +56,15 @@ public class INIT {
             try {
                 S = scn.nextInt();
                 if (S < 1 || S > Cat.size())
-                    throw new SelectionOutOfBondException("Erreur tu as entrée une selection Invalid");
+                    throw new SelectionOutOfBondException("Erreur tu as entrée une selection Invalid ");
             } catch (SelectionOutOfBondException e) {
                 System.out.println(e.getMessage());
                 v = false;
+            }
+            catch (InputMismatchException e){
+                    System.out.println("Erreur il faut entrer un numero ");
+                    v = false;
+                    scn.next();
             }
         }while(!v);
         return S;
