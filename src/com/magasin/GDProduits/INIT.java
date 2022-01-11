@@ -101,6 +101,13 @@ public class INIT {
             case 2 :
                 switch (Type) {
                     case 1 :
+                        System.out.print("Taille d'Ecran :");
+                        i1=Scn.nextInt();
+                        System.out.print("Quality d'image supporté :");
+                        s4=Scn.next();
+                        System.out.print("Quantité :");
+                        i3= Scn.nextInt();
+                        P=new Tv(Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i3,i1);
                         break;
                     case 2 :
                         break;
