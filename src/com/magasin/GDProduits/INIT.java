@@ -193,6 +193,10 @@ public class INIT {
             } catch (SelectionOutOfBondException e) {
                 System.out.println(e.getMessage());
                 v = false;
+            }catch (InputMismatchException e){
+                System.out.println("Erreur il faut entrer un numero ");
+                v = false;
+                scn.next();
             }
         }while(!v);
         return S;
