@@ -2,7 +2,7 @@ package com.magasin.GDProduits.Produits;
 public class Tablette extends Produit {
     private int Ram,Stockage;
     private String Cpu;
-    public Tablette(int Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int Quent) {
+    public Tablette(String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int Quent) {
         super(Name,Ref,Type, Descriptive,Quent);
         this.Cpu=Cpu;
         this.Ram=Ram;

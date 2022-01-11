@@ -1,11 +1,11 @@
 package com.magasin.GDProduits.Produits;
 public class Produit {
     public final String Name,Ref; // Ref=Référence
-    public final int Type;
+    public final String Type;
     public String Descriptive;
     private int NbProduit=0;
     private double price;
-    public Produit(String name, String ref, int type, String descriptive,int NbProduit) {
+    public Produit(String name, String ref, String type, String descriptive,int NbProduit) {
         Name = name;
         Ref = ref;
         Type = type;

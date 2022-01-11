@@ -85,7 +85,7 @@ public class INIT {
                         i2 = Scn.nextInt();
                         System.out.print("Quantité :");
                         i3= Scn.nextInt();
-                        P=new Tablette(Type,s1,s2,s3,s4,i1,i2,i3);
+                        P=new Tablette(Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3);
                         break;
                     case 2 :
                         System.out.print("Cpu : ");
@@ -96,7 +96,7 @@ public class INIT {
                         i2 = Scn.nextInt();
                         System.out.print("Quantité :");
                         i3= Scn.nextInt();
-                        P=new Phone(Type,s1,s2,s3,s4,i1,i2,i3);
+                        P=new Phone(Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3);
                         break;
                     case 3 :
                         break;
