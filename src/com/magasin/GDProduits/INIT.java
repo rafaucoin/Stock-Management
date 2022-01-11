@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 public class INIT {
+    //hahahahahahhahahaha
     public final static  Map<Integer,Categorie> Cat = new HashMap<>();
     public  INIT() {
         // ***** Adding Products Name */
