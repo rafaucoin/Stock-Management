@@ -1,19 +1,17 @@
 package com.magasin.GDProduits.Produits;
-public class Serveur extends Produit{
+
+public class Serveur extends Produit {
     private int Ram,Stockage;
     private String Cpu;
-    public Serveur(String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int Quent) {
-        super(Name,Ref,Type, Descriptive,Quent);
+
+
+    public Serveur(String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int NbProduit) {
+        super(Name,Ref,Type, Descriptive,NbProduit);
         this.Cpu=Cpu;
         this.Ram=Ram;
         this.Stockage=Stockage;
     }
-    public Serveur(String name, String type, int ram, int stockage, String cpu) {
-        super(name, type);
-        Ram = ram;
-        Stockage = stockage;
-        Cpu = cpu;
-    }
+    @Override
     public void Affiche_Produit() {
     }
 
@@ -27,6 +25,7 @@ public class Serveur extends Produit{
         if (this == o) return true;
         if (!(o instanceof Serveur)) return false;
         Serveur serveur = (Serveur) o;
-        return Ram == serveur.Ram && Stockage == serveur.Stockage && Cpu.equalsIgnoreCase(serveur.Cpu) && Name.equalsIgnoreCase(serveur.Name);
+        return Ram == serveur.Ram && Stockage == serveur.Stockage && Cpu.equalsIgnoreCase(serveur.Cpu) && Name.equalsIgnoreCase(serveur.Name) && Ref.equalsIgnoreCase(serveur.Ref);
     }
+    //ter
 }
