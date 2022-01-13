@@ -12,11 +12,17 @@ public class Produit {
         Descriptive = descriptive;
         this.NbProduit=NbProduit;
     }
+    public Produit(String name, String type) {
+        Name = name;
+        Type = type;
+        Ref=" ";
+    }
+
     public  void Affiche_Produit() {
-        // quantiti tanik hna wa9il
         System.out.println("Name :" + Name);
         System.out.println("Référence :" + Ref);
         System.out.println("Description :" + Descriptive);
+        System.out.println("Quantité :"+NbProduit);
     }
     public void IncNbProduit(int nbProduit) {
         NbProduit += nbProduit;
@@ -32,7 +38,6 @@ public class Produit {
     public double getPrice() {
         return price;
     }
-
     public void setPrice(double price) {
         this.price = price;
     }

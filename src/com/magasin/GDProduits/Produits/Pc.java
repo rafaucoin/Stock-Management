@@ -9,7 +9,13 @@ public class Pc extends Produit {
         this.Stockage=Stockage;
         this.screen = screen;
     }
-    @Override
+    public Pc(String name, String type, int ram, int stockage, int screen, String cpu) {
+        super(name, type);
+        Ram = ram;
+        Stockage = stockage;
+        this.screen = screen;
+        Cpu = cpu;
+    }
     public void Affiche_Produit() {
     }
     @Override
@@ -17,6 +23,6 @@ public class Pc extends Produit {
         if (this == o) return true;
         if (!(o instanceof Pc)) return false;
         Pc pc = (Pc) o;
-        return Ram == pc.Ram && Stockage == pc.Stockage && Cpu.equalsIgnoreCase(pc.Cpu) && Name.equalsIgnoreCase(pc.Name) && Ref.equalsIgnoreCase(pc.Ref) && screen == pc.screen;
+        return Ram == pc.Ram && Stockage == pc.Stockage && Cpu.equalsIgnoreCase(pc.Cpu) && Name.equalsIgnoreCase(pc.Name) && screen == pc.screen;
     }
 }

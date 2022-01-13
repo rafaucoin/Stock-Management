@@ -22,8 +22,6 @@ public class Magasinier {
         int Type=INIT.Selection_ProduitType(Selec);
         boolean v= true;
         Produit P = INIT.LireProduitPrMagasinier(Selec,Type);
-
-
         for(Produit M : INIT.Cat.get(Selec).Produits) {
            if(P.equals(M))
                M.IncNbProduit(P.getNbProduit()); found=true; break;
