@@ -1,4 +1,23 @@
 package com.magasin.GDProduits.Produits;
 
-public class Batterie {
+import java.util.Objects;
+
+public class Batterie extends Produit {
+    private String capacity;
+    private String cells;
+
+    public Batterie(String name, String ref, String type, String descriptive, int NbProduit, String capacity, String cells) {
+        super(name, ref, type, descriptive, NbProduit);
+        this.capacity = capacity;
+        this.cells = cells;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Batterie)) return false;
+        Batterie batterie = (Batterie) o;
+        return Objects.equals(capacity, batterie.capacity) && Objects.equals(cells, batterie.cells);
+    }
+
 }

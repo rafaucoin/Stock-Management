@@ -2,8 +2,8 @@ package com.magasin.GDProduits.Produits;
 public class Pc extends Produit {
     private int Ram,Stockage, screen;
     private String Cpu;
-    public Pc(String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int Quent, int screen) {
-        super(Name,Ref,Type, Descriptive,Quent);
+    public Pc(String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int NbProduit, int screen) {
+        super(Name,Ref,Type, Descriptive,NbProduit);
         this.Cpu=Cpu;
         this.Ram=Ram;
         this.Stockage=Stockage;

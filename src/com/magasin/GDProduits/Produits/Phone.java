@@ -2,8 +2,8 @@ package com.magasin.GDProduits.Produits;
 public class Phone extends Produit {
     private int Ram,Stockage;
     private String Cpu;
-    public Phone(String Type,String Name, String Ref, String Descriptive,String Cpu, int Ram, int Stockage, int Quent) {
-        super(Name,Ref,Type, Descriptive,Quent);
+    public Phone(String Type,String Name, String Ref, String Descriptive,String Cpu, int Ram, int Stockage, int NbProduit) {
+        super(Name,Ref,Type, Descriptive,NbProduit);
         this.Cpu=Cpu;
         this.Ram=Ram;
         this.Stockage=Stockage;
