@@ -4,6 +4,7 @@ import com.magasin.GDProduits.Produits.*;
 
 import java.util.*;
 public class INIT {
+    //public final static
     public final static  Map<Integer,Categorie> Cat = new HashMap<>();
     public  INIT() {
         // ***** Adding Products Name */
@@ -54,6 +55,45 @@ public class INIT {
         }while(!v);
         return S;
     }
+    public static int Selection_ProduitType(int cat) {
+        Scanner scn=new Scanner(System.in);
+        int S=0;
+        boolean v;
+        do {
+            Cat.get(cat).TypePro.forEach((key, type) -> System.out.println((key+"-"+type)));
+            v = true;
+            try {
+                S = scn.nextInt();
+                if (S < 1 || S > Cat.get(cat).TypePro.size())
+                    throw new SelectionOutOfBondException("Erreur tu as entrée une selection Invalid");
+            } catch (SelectionOutOfBondException e) {
+                System.out.println(e.getMessage());
+                v = false;
+            }catch (InputMismatchException e){
+                System.out.println("Erreur il faut entrer un numero ");
+                v = false;
+                scn.next();
+            }
+        }while(!v);
+        return S;
+    }
+    public static int LireInt(String msg) {
+        Scanner i=new Scanner(System.in);
+        boolean v;
+        int ii=0;
+        do {
+            v=true;
+            try {
+                System.out.print(msg);
+                ii = i.nextInt();
+            } catch (InputMismatchException e) {
+                v=false;
+                System.out.println("Veuiller Vous Entrez Des Chiffres");
+                i.nextLine();
+            }
+        }while(!v);
+        return ii;
+    }
     public static Produit LireProduitPrMagasinier(int Selct,int Type) {
         Produit P=null;
         Scanner Scn= new Scanner(System.in);
@@ -71,27 +111,19 @@ public class INIT {
                     case 1 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        System.out.print("Ram en (GB) : ");
-                        i1 = Scn.nextInt();
-                        System.out.print("Stockage en (GB) : ");
-                        i2 = Scn.nextInt();
-                        System.out.print("Batterie (mAh) :");
-                        i4= Scn.nextInt();
-                        System.out.print("Quantité :");
-                        i3= Scn.nextInt();
+                        i1 = LireInt("Ram en (GB) : ");
+                        i2 = LireInt("Stockage en (GB) : ");
+                        i4=LireInt("Batterie (mAh) : ");
+                        i3=LireInt("Quantité : ");
                         P=new Tablette(Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3,i4);
                         break;
                     case 2 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        System.out.print("Ram en (GB) : ");
-                        i1 = Scn.nextInt();
-                        System.out.print("Stockage en (GB) : ");
-                        i2 = Scn.nextInt();
-                        System.out.print("Batterie (mAh) :");
-                        i4= Scn.nextInt();
-                        System.out.print("Quantité :");
-                        i3= Scn.nextInt();
+                        i1 = LireInt("Ram en (GB) : ");
+                        i2 = LireInt("Stockage en (GB) : ");
+                        i4=LireInt("Batterie (mAh) : ");
+                        i3=LireInt("Quantité : ");
                         P=new Phone(Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3,i4);
                         break;
                     case 3 :
@@ -262,26 +294,5 @@ public class INIT {
         }
         return P;
     }
-    public static int Selection_ProduitType(int cat) {
-        Scanner scn=new Scanner(System.in);
-        int S=0;
-        boolean v;
-        do {
-            Cat.get(cat).TypePro.forEach((key, type) -> System.out.println((key+"-"+type)));
-            v = true;
-            try {
-                S = scn.nextInt();
-                if (S < 1 || S > Cat.get(cat).TypePro.size())
-                    throw new SelectionOutOfBondException("Erreur tu as entrée une selection Invalid");
-            } catch (SelectionOutOfBondException e) {
-                System.out.println(e.getMessage());
-                v = false;
-            }catch (InputMismatchException e){
-                System.out.println("Erreur il faut entrer un numero ");
-                v = false;
-                scn.next();
-            }
-        }while(!v);
-        return S;
-    }
+
 }

@@ -1,5 +1,5 @@
 package com.magasin.GDProduits.Produits;
-public class Produit {
+public abstract class Produit implements Affichage {
     public final String Name,Ref; // Ref=Référence
     public final String Type;
     public String Descriptive;
@@ -17,7 +17,6 @@ public class Produit {
         Type = type;
         Ref=" ";
     }
-
     public  void Affiche_Produit() {
         System.out.println("Name :" + Name);
         System.out.println("Référence :" + Ref);
@@ -33,7 +32,6 @@ public class Produit {
     public void DecNb() {
         if (NbProduit != 0)
             NbProduit--;
-
     }
     public double getPrice() {
         return price;
@@ -41,4 +39,5 @@ public class Produit {
     public void setPrice(double price) {
         this.price = price;
     }
+    public abstract void finalize();
 }

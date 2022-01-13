@@ -1,12 +1,12 @@
 package com.magasin.GDProduits.App;
 import com.magasin.GDProduits.INIT;
 import com.magasin.GDProduits.Personnes.Client;
-import com.magasin.GDProduits.Personnes.Magasinier;
+import com.magasin.GDProduits.Personnes.Agent;
 public class App {
     public static void main(String[] args) {
         INIT i=new INIT();
         Client C=new Client();
-        Magasinier m= new Magasinier();
+        Agent m= new Agent();
         do {
             System.out.println("Ajoute de Produit :");
             m.Ajoute_Produit();

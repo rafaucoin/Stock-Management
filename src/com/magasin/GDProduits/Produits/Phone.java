@@ -19,6 +19,11 @@ public class Phone extends Produit {
     @Override
     public void Affiche_Produit() {
     }
+
+    @Override
+    public void finalize() {
+
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -16,6 +16,10 @@ public class Tv extends Produit{
     public void Affiche_Produit() {
     }
     @Override
+    public void finalize() {
+
+    }
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Tv)) return false;

@@ -1,10 +1,8 @@
 package com.magasin.GDProduits.Personnes;
 import com.magasin.GDProduits.INIT;
 import com.magasin.GDProduits.Produits.Produit;
-
-import java.util.InputMismatchException;
 import java.util.Scanner;
-public class Magasinier {
+public class Agent {
     public Produit Recherche_Ref() {
         Scanner scn=new Scanner(System.in);
         String Ref=scn.next();
