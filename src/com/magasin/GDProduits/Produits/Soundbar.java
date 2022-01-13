@@ -11,7 +11,7 @@ public class Soundbar extends Produit{
         this.sound = sound;
         this.connectivity = connectivity;
     }
-
+    //ter
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

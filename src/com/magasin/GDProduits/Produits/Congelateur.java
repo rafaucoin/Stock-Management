@@ -17,5 +17,5 @@ public class Congelateur extends Produit{
         Congelateur that = (Congelateur) o;
         return Objects.equals(energie, that.energie);
     }
-
+//ter
 }

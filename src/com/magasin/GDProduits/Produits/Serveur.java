@@ -21,4 +21,5 @@ public class Serveur extends Produit {
         Serveur serveur = (Serveur) o;
         return Ram == serveur.Ram && Stockage == serveur.Stockage && Cpu.equalsIgnoreCase(serveur.Cpu) && Name.equalsIgnoreCase(serveur.Name) && Ref.equalsIgnoreCase(serveur.Ref);
     }
+    //ter
 }

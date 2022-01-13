@@ -18,4 +18,5 @@ public class Climatiseur extends Produit{
         Climatiseur that = (Climatiseur) o;
         return capacite == that.capacite && sonore == that.sonore;
     }
+    //ter
 }

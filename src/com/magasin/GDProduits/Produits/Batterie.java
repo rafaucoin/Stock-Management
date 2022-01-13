@@ -20,4 +20,4 @@ public class Batterie extends Produit {
         return Objects.equals(capacity, batterie.capacity) && Objects.equals(cells, batterie.cells);
     }
 
-}
+}//ter

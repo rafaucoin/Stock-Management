@@ -25,4 +25,5 @@ public class Pc extends Produit {
         Pc pc = (Pc) o;
         return Ram == pc.Ram && Stockage == pc.Stockage && Cpu.equalsIgnoreCase(pc.Cpu) && Name.equalsIgnoreCase(pc.Name) && screen == pc.screen;
     }
+    //ter
 }

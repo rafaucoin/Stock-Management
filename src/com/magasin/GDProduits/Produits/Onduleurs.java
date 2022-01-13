@@ -19,5 +19,5 @@ public class Onduleurs extends Produit{
         Onduleurs onduleurs = (Onduleurs) o;
         return nbprises == this.nbprises && capacite == this.capacite;
     }
-
+//ter
 }
