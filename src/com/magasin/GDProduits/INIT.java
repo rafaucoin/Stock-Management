@@ -1,4 +1,4 @@
-package com.magasin.GDProduits; // *********** Negative Value of the Quant not handled yet *************
+package com.magasin.GDProduits;
 import com.magasin.GDProduits.Exceptions.*;
 import com.magasin.GDProduits.Produits.*;
 
