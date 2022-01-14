@@ -1,6 +1,7 @@
 package com.magasin.GDProduits.Personnes;
 import com.magasin.GDProduits.INIT;
 import com.magasin.GDProduits.Produits.Produit;
+import java.util.Random;
 import java.util.Scanner;
 public class Agent {
     public Produit Recherche_Ref() {
@@ -63,4 +64,33 @@ public class Agent {
         }
         P.IncNbProduit(Nombre);
     }
+    public void Creation_Account(Client c) {
+    if(c.Compte!=null) {
+        System.out.println("Compte Existe Déja");
+    }
+    else {
+         String Pass= PasswordGenerator.generateRandomPassword(8);
+         c.Compte=new CompteFDL(Pass);
+         System.out.println("Mot de Pass : "+c.Compte.getPassword());
+    }
+    }
+    public void Changement_Pass(Client c) {
+        if(c.Compte==null)
+            System.out.println("il a pas un compte");
+        else {
+            String Pass= PasswordGenerator.generateRandomPassword(8);
+            System.out.println("Le nouveau Mot de Pass est : "+c.Compte.getPassword());
+        }
+    }
+    private class PasswordGenerator {
+        public static String generateRandomPassword(int len) {
+            String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi"
+                    +"jklmnopqrstuvwxyz!@#$%&";
+            Random rnd = new Random();
+            StringBuilder sb = new StringBuilder(len);
+            for (int i = 0; i < len; i++)
+                sb.append(chars.charAt(rnd.nextInt(chars.length())));
+            return sb.toString();
+        }
+    }  // INNER CLASS
 }

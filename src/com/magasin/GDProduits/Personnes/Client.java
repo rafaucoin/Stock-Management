@@ -4,9 +4,14 @@ import com.magasin.GDProduits.Produits.Produit;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Client {
-
-    static ArrayList<CompteFDL> Compts = new ArrayList<>(); // ALL CLIENTS ACCOUNTS
+    public final String Nom, Prenom,Adresse;
+    CompteFDL Compte =null;
     //Vector of searched products if there a many with same caract 0 Nbproducts s case not yet
+    public Client(String nom, String prenom, String adresse) {
+        Nom = nom;
+        Prenom = prenom;
+        Adresse = adresse;
+    }
     public final ArrayList<Produit> Reservation = new ArrayList();
     public Produit Recherche_Produit() { // ttbdel if kyn name
         int Selec=INIT.Select_Categorie();
@@ -39,7 +44,7 @@ public class Client {
            // }
         }
     }
-    public boolean  Connexion() {
+    public void Connexion() {
     }
     public void Affichage_Pts() {
 

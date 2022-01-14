@@ -2,13 +2,8 @@ package com.magasin.GDProduits.Personnes;
 public class CompteFDL implements CompteFidélité {
     private String Password;
     private double PIM,PELE,PS;
-    public final String Nom, Prenom;
-    public String Adresse;
-    public CompteFDL(String Password, String nom, String prenom,String Adresse) {
-        this.Adresse=Adresse;
+    public CompteFDL(String Password) {
         this.Password = Password;
-        Nom = nom;
-        Prenom = prenom;
         this.PIM =0;
         this.PELE =0;
         this.PS =0;
