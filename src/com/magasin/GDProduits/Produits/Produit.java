@@ -3,15 +3,16 @@ public  class Produit implements Affichage {
     public final String Name,Ref; // Ref=Référence
     public final String Type,Categorie;
     public String Descriptive;
-    private int NbProduit=0;
+    public double getPrice() {
+        return price;
+    }
     private double price;
-    public Produit(String Categorie, String name, String ref, String type, String descriptive, int NbProduit) {
+    public Produit(String Categorie, String name, String ref, String type, String descriptive) {
         this.Categorie=Categorie;
         Name = name;
         Ref = ref;
         Type = type;
         Descriptive = descriptive;
-        this.NbProduit=NbProduit;
     }
     public Produit(String Categorie, String name, String type) {
         this.Categorie=Categorie;
@@ -23,20 +24,6 @@ public  class Produit implements Affichage {
         System.out.println("Name :" + Name);
         System.out.println("Référence :" + Ref);
         System.out.println("Description :" + Descriptive);
-        System.out.println("Quantité :"+NbProduit);
-    }
-    public void IncNbProduit(int nbProduit) {
-        NbProduit += nbProduit;
-    }
-    public int getNbProduit() {
-        return NbProduit;
-    }
-    public void DecNbProduit() {
-        if (NbProduit != 0)
-            NbProduit--;
-    }
-    public double getPrice() {
-        return price;
     }
     public void setPrice(double price) {
         this.price = price;

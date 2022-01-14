@@ -1,8 +1,13 @@
 package com.magasin.GDProduits.Produits;
 public class Climatiseur extends Produit{
     private int capacite, sonore;
-    public Climatiseur(String Cat,String name, String ref, String type, String descriptive, int NbProduit, int capacite, int sonore) {
-        super(Cat, name, ref, type, descriptive, NbProduit);
+    public Climatiseur(String Cat,String name, String ref, String type, String descriptive, int capacite, int sonore) {
+        super(Cat, name, ref, type, descriptive);
+        this.capacite = capacite;
+        this.sonore = sonore;
+    }
+    public Climatiseur(String Categorie, String name, String type, int capacite, int sonore) {
+        super(Categorie, name, type);
         this.capacite = capacite;
         this.sonore = sonore;
     }
@@ -13,5 +18,9 @@ public class Climatiseur extends Produit{
         Climatiseur that = (Climatiseur) o;
         return capacite == that.capacite && sonore == that.sonore;
     }
-    //ter
+    @Override
+    public void Affiche_Produit() {
+        super.Affiche_Produit();
+
+    }
 }

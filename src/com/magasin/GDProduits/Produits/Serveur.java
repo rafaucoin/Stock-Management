@@ -9,19 +9,11 @@ public class Serveur extends Produit {
         Stockage = stockage;
         Cpu = cpu;
     }
-    public Serveur(String Cat,String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int NbProduit) {
-        super(Cat, Name, Ref, Type, Descriptive, NbProduit);
+    public Serveur(String Cat,String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage) {
+        super(Cat, Name, Ref, Type, Descriptive);
         this.Cpu=Cpu;
         this.Ram=Ram;
         this.Stockage=Stockage;
-    }
-    @Override
-    public void Affiche_Produit() {
-    }
-
-    @Override
-    public void finalize() {
-
     }
     @Override
     public boolean equals(Object o) {
@@ -30,5 +22,9 @@ public class Serveur extends Produit {
         Serveur serveur = (Serveur) o;
         return Ram == serveur.Ram && Stockage == serveur.Stockage && Cpu.equalsIgnoreCase(serveur.Cpu) && Name.equalsIgnoreCase(serveur.Name);
     }
-    //ter
+    @Override
+    public void Affiche_Produit() {
+        super.Affiche_Produit();
+
+    }
 }

@@ -30,7 +30,10 @@ public class CompteFDL implements CompteFidélité {
         }
     }
     public void Affiche_Points() {
-    System.out.println("Points ");
+    System.out.println("Vos Points :");
+    System.out.println("Cumule de produits informatiques et mobiles: "+PIM);
+    System.out.println("Cumule de produits électronique et électroménager: "+PELE);
+    System.out.println("Cumule de kits solaires: "+PS);
     }
     public void Increment_Points(double price,String Cat) {
         switch (Cat) {
@@ -62,5 +65,4 @@ public class CompteFDL implements CompteFidélité {
                 break;
         }
     }
-
 }

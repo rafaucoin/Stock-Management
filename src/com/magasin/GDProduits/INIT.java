@@ -4,6 +4,7 @@ import com.magasin.GDProduits.Produits.*;
 
 import java.util.*;
 public class INIT {
+    public final Queue<Produit> Pro_queue = new LinkedList<>();
     public final static  Map<Integer,Categorie> Cat = new HashMap<>();
     public  INIT() {
         // ***** Adding Products Name */
@@ -30,7 +31,6 @@ public class INIT {
         Cat.get(5).Add_New_ProType("Onduleurs");
         Cat.get(5).Add_New_ProType("batterie solaire");
     }
-    public final Queue<Produit> Pro_queue = new LinkedList<>();
     public static int Select_Categorie() {
         Scanner scn=new Scanner(System.in);
         int S=0;
@@ -93,8 +93,8 @@ public class INIT {
         }while(!v);
         return ii;
     }
-    public static Produit LireProduitPrMagasinier(int Selct,int Type) {
-        Produit P=null;
+    public static ProduitEtNb LireProduitPrMagasinier(int Selct,int Type) {
+        ProduitEtNb P=null;
         Scanner Scn= new Scanner(System.in);
         String s1,s2,s3,s4,s5;
         int i1,i2,i3,i4;
@@ -114,7 +114,7 @@ public class INIT {
                         i2 =LireInt("Stockage en (GB) : ");
                         i4=LireInt("Batterie (mAh) : ");
                         i3=LireInt("Quantité : ");
-                        P=new Tablette(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3,i4);
+                        P=new ProduitEtNb(new Tablette(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i4),i3);
                         break;
                     case 2 :
                         System.out.print("Cpu : ");
@@ -123,7 +123,7 @@ public class INIT {
                         i2 =LireInt("Stockage en (GB) : ");
                         i4=LireInt("Batterie (mAh) : ");
                         i3=LireInt("Quantité : ");
-                        P=new Phone(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3,i4);
+                        P=new ProduitEtNb(new Phone(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i4),i3);
                         break;
                     case 3 :
                         break;
@@ -137,7 +137,7 @@ public class INIT {
                         System.out.print("Quality d'image supporté :");
                         s4=Scn.next();
                         i3=LireInt("Quantité :");
-                        P=new Tv(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i3,i1);
+                        P=new ProduitEtNb(new Tv(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1),i3);
                         break;
                     case 2 : // soundbar
                         System.out.println("Sound : "); // WDYM BY SOUND
@@ -145,7 +145,7 @@ public class INIT {
                         System.out.println("connectivity : ");
                         s5=Scn.next();
                         i3=LireInt("Quantité :");
-                        P=new Soundbar(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,s4,s5);
+                        P=new ProduitEtNb(new Soundbar(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,s4,s5),i3);
                         break;
                 }
                 break;
@@ -155,13 +155,13 @@ public class INIT {
                         i1=LireInt("Capacité : ");
                         i2=LireInt("Sonore : ");
                         i3=LireInt("Quantité :");
-                        P=new Climatiseur(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,i1,i2);
+                        P=new ProduitEtNb(new Climatiseur(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i1,i2),i3);
                         break;
                     case 2 :
                         System.out.println("Enèrgie : ");
                         s4=Scn.next();
                         i3=LireInt("Quantité :");
-                        P= new Congelateur(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,s4);
+                        P= new ProduitEtNb(new Congelateur(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,s4),i3);
                         break;
                 }
                 break;
@@ -179,7 +179,7 @@ public class INIT {
                         i3 = Scn.nextInt();
                         System.out.print("Quantité :");
                         i4= Scn.nextInt();
-                        P=new Pc(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3,i4);
+                        P=new ProduitEtNb(new Pc(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3),i4);
                         break;
                     case 3 :
                         System.out.print("Cpu : ");
@@ -190,7 +190,7 @@ public class INIT {
                         i2 = Scn.nextInt();
                         System.out.print("Quantité :");
                         i4= Scn.nextInt();
-                        P=new Serveur(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i4);
+                        P=new ProduitEtNb(new Serveur(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2),i4);
                         break;
 
                 }
@@ -201,7 +201,7 @@ public class INIT {
                         i1=LireInt("Nombre des Prises : ");
                         i2=LireInt("Capacité : ");
                         i3=LireInt("Quantité : ");
-                        P=new Onduleurs(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,i1,i2);
+                        P=new ProduitEtNb(new Onduleurs(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i1,i2),i3);
                         break;
                     case 2 :
                         System.out.println("Capacité : ");
@@ -209,7 +209,7 @@ public class INIT {
                         System.out.println("Nombre de Cells : ");
                         s5=Scn.next();
                         i3=LireInt("Quantité : ");
-                        P=new Batterie(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,s4,s5);
+                        P=new ProduitEtNb(new Batterie(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,s4,s5),i3);
                         break;
                 }
                 break;
