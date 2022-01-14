@@ -1,10 +1,9 @@
-package com.magasin.GDProduits;
+package com.magasin.GDProduits; // *********** Negative Value of the Quant not handled yet *************
 import com.magasin.GDProduits.Exceptions.*;
 import com.magasin.GDProduits.Produits.*;
 
 import java.util.*;
 public class INIT {
-    //public final static
     public final static  Map<Integer,Categorie> Cat = new HashMap<>();
     public  INIT() {
         // ***** Adding Products Name */
@@ -97,7 +96,7 @@ public class INIT {
     public static Produit LireProduitPrMagasinier(int Selct,int Type) {
         Produit P=null;
         Scanner Scn= new Scanner(System.in);
-        String s1,s2,s3,s4;
+        String s1,s2,s3,s4,s5;
         int i1,i2,i3,i4;
         System.out.print("Name=");
         s1 = Scn.next();
@@ -111,8 +110,8 @@ public class INIT {
                     case 1 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        i1 = LireInt("Ram en (GB) : ");
-                        i2 = LireInt("Stockage en (GB) : ");
+                        i1 =LireInt("Ram en (GB) : ");
+                        i2 =LireInt("Stockage en (GB) : ");
                         i4=LireInt("Batterie (mAh) : ");
                         i3=LireInt("Quantité : ");
                         P=new Tablette(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3,i4);
@@ -120,8 +119,8 @@ public class INIT {
                     case 2 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        i1 = LireInt("Ram en (GB) : ");
-                        i2 = LireInt("Stockage en (GB) : ");
+                        i1 =LireInt("Ram en (GB) : ");
+                        i2 =LireInt("Stockage en (GB) : ");
                         i4=LireInt("Batterie (mAh) : ");
                         i3=LireInt("Quantité : ");
                         P=new Phone(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3,i4);
@@ -137,19 +136,32 @@ public class INIT {
                         i1=Scn.nextInt();
                         System.out.print("Quality d'image supporté :");
                         s4=Scn.next();
-                        System.out.print("Quantité :");
-                        i3= Scn.nextInt();
+                        i3=LireInt("Quantité :");
                         P=new Tv(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i3,i1);
                         break;
-                    case 2 :
+                    case 2 : // soundbar
+                        System.out.println("Sound : "); // WDYM BY SOUND
+                        s4=Scn.next();
+                        System.out.println("connectivity : ");
+                        s5=Scn.next();
+                        i3=LireInt("Quantité :");
+                        P=new Soundbar(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,s4,s5);
                         break;
                 }
                 break;
             case 3 :
                 switch (Type) {
                     case 1 :
+                        i1=LireInt("Capacité : ");
+                        i2=LireInt("Sonore : ");
+                        i3=LireInt("Quantité :");
+                        P=new Climatiseur(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,i1,i2);
                         break;
                     case 2 :
+                        System.out.println("Enèrgie : ");
+                        s4=Scn.next();
+                        i3=LireInt("Quantité :");
+                        P= new Congelateur(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,s4);
                         break;
                 }
                 break;
@@ -186,10 +198,18 @@ public class INIT {
             case 5 :
                 switch (Type) {
                     case 1 :
+                        i1=LireInt("Nombre des Prises : ");
+                        i2=LireInt("Capacité : ");
+                        i3=LireInt("Quantité : ");
+                        P=new Onduleurs(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,i1,i2);
                         break;
                     case 2 :
-                        break;
-                    case 3 :
+                        System.out.println("Capacité : ");
+                        s4=Scn.next();
+                        System.out.println("Nombre de Cells : ");
+                        s5=Scn.next();
+                        i3=LireInt("Quantité : ");
+                        P=new Batterie(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i3,s4,s5);
                         break;
                 }
                 break;
@@ -228,8 +248,8 @@ public class INIT {
                         i4= Scn.nextInt();
                         P=new Phone(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,i2,i4,s4);
                         break;
-                    case 3 :
-                        break;
+                    /*case 3 : // MAYBE I'LL ADD SMART WATCH
+                        break; */
                 }
                 break;
             case 2 :
@@ -242,6 +262,7 @@ public class INIT {
                         P=new Tv(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,s4);
                         break;
                     case 2 :
+
                         break;
                 }
                 break;
@@ -278,7 +299,6 @@ public class INIT {
                         i3 = Scn.nextInt();
                         P=new Serveur(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,i2,s4);
                         break;
-
                 }
                 break;
             case 5 :
@@ -286,8 +306,6 @@ public class INIT {
                     case 1 :
                         break;
                     case 2 :
-                        break;
-                    case 3 :
                         break;
                 }
                 break;

@@ -4,6 +4,7 @@ import com.magasin.GDProduits.Produits.Produit;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Client {
+
     static ArrayList<CompteFDL> Compts = new ArrayList<>(); // ALL CLIENTS ACCOUNTS
     //Vector of searched products if there a many with same caract 0 Nbproducts s case not yet
     public final ArrayList<Produit> Reservation = new ArrayList();
