@@ -14,12 +14,53 @@ public class CompteFDL implements CompteFidélité {
     public void setPassword(String password) {
         Password = password;
     }
-    @Override
-    public void Remise_a_Zero() {
-
+    public void Remise_a_Zero(String Cat) {
+        switch (Cat) {
+            case "Mobiles":
+            case "Informatiques" :
+                PIM=0;
+                break;
+            case "Electromenager":
+            case "Electroniques":
+                PELE=0;
+                break;
+            case "Kits solaires" :
+                PS=0;
+                break;
+        }
     }
-    @Override
     public void Affiche_Points() {
     System.out.println("Points ");
     }
+    public void Increment_Points(double price,String Cat) {
+        switch (Cat) {
+            case "Mobiles":
+            case "Informatiques" :
+                PIM+=price;
+                break;
+            case "Electromenager":
+            case "Electroniques":
+                PELE+=price;
+                break;
+            case "Kits solaires" :
+                PS+=price;
+                break;
+        }
+    }
+    public void Decrement_Points(double price, String Cat) {
+        switch (Cat) {
+            case "Mobiles":
+            case "Informatiques" :
+                PIM-=price;
+                break;
+            case "Electromenager":
+            case "Electroniques":
+                PELE-=price;
+                break;
+            case "Kits solaires" :
+                PS-=price;
+                break;
+        }
+    }
+
 }

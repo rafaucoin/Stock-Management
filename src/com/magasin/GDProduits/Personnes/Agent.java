@@ -31,37 +31,13 @@ public class Agent {
     }
     public void Action_Achat(Client c) {
         Produit P=Recherche_Ref();
-        if(c.)
-        switch (P.Categorie) {
-            case "Mobiles":
-            case "Informatiques" :
-
-                break;
-            case "Electromenager":
-            case "Electroniques":
-
-                break;
-            case "Kits solaires" :
-
-                break;
-        }
+        if(c.Compte!=null)
+        c.Compte.Increment_Points(P.getPrice(),P.Categorie);
         P.DecNbProduit();
     }
-    public void Action_Retour(int Nombre) {
+    public void Action_Retour(Client c,int Nombre) {
         Produit P=Recherche_Ref();
-        switch (P.Categorie) {
-            case "Mobiles":
-            case "Informatiques" :
-
-                break;
-            case "Electromenager":
-            case "Electroniques":
-
-                break;
-            case "Kits solaires" :
-
-                break;
-        }
+        c.Compte.Decrement_Points(P.getPrice(),P.Categorie);
         P.IncNbProduit(Nombre);
     }
     public void Creation_Account(Client c) {
@@ -79,6 +55,7 @@ public class Agent {
             System.out.println("il a pas un compte");
         else {
             String Pass= PasswordGenerator.generateRandomPassword(8);
+            c.Compte.setPassword(Pass);
             System.out.println("Le nouveau Mot de Pass est : "+c.Compte.getPassword());
         }
     }
