@@ -11,20 +11,21 @@ public class ProduitEtNb {
     }
     private int NombreProduit=0;
     public ProduitEtNb(Produit P,int Nombre) {
-        boolean v;
+        boolean v=true;
         Produit=P;
         NombreProduit=Nombre;
         do {
+            if(!v)
+                NombreProduit=INIT.LireInt("Quantité : ");
             v=true;
             try {
                 if (NombreProduit < 0)
-                    throw new NombreProduitsNeagtiveException();
+                    throw new NombreProduitsNeagtiveException("il faut un Nombre Positif");
             }
             catch (NombreProduitsNeagtiveException e) {
                 System.out.println(e.getMessage());
                 v=false;
             }
-        NombreProduit=INIT.LireInt("Quantité : ");
         }while(!v);
     }
     public void incNbProduit(int nombreProduit) {

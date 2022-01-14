@@ -16,7 +16,7 @@ public class Climatiseur extends Produit{
         if (this == o) return true;
         if (!(o instanceof Climatiseur)) return false;
         Climatiseur that = (Climatiseur) o;
-        return capacite == that.capacite && sonore == that.sonore;
+        return capacite == that.capacite && sonore == that.sonore && that.Name.equalsIgnoreCase(Name);
     }
     @Override
     public void Affiche_Produit() {

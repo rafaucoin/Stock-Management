@@ -5,7 +5,7 @@ import com.magasin.GDProduits.Personnes.Agent;
 public class App {
     public static void main(String[] args) {
         INIT i=new INIT();
-        Client C=new Client();
+        Client C=new Client("ok","ok","ok");
         Agent m= new Agent();
         do {
             System.out.println("Ajoute de Produit :");

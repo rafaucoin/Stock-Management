@@ -15,7 +15,7 @@ public class Congelateur extends Produit{
         if (this == o) return true;
         if (!(o instanceof Congelateur)) return false;
         Congelateur that = (Congelateur) o;
-        return that.energie.equalsIgnoreCase(energie);
+        return that.energie.equalsIgnoreCase(energie) && that.Name.equalsIgnoreCase(Name);
     }
     @Override
     public void Affiche_Produit() {

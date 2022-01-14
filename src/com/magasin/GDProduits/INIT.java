@@ -185,7 +185,6 @@ public class INIT {
                         i4= LireInt("Quantité : ");
                         P=new ProduitEtNb(new Serveur(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2),i4);
                         break;
-
                 }
                 break;
             case 5 :
@@ -197,12 +196,11 @@ public class INIT {
                         P=new ProduitEtNb(new Onduleurs(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i1,i2),i3);
                         break;
                     case 2 :
-                        System.out.println("Capacité : ");
-                        s4=Scn.next();
+                        i2=LireInt("Capacité : ");
                         System.out.println("Nombre de Cells : ");
                         s5=Scn.next();
                         i3=LireInt("Quantité : ");
-                        P=new ProduitEtNb(new Batterie(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,s4,s5),i3);
+                        P=new ProduitEtNb(new Batterie(Cat.get(Selct).Nom_Cat,s1,s2,Cat.get(Selct).TypePro.get(Type),s3,i2,s5),i3);
                         break;
                 }
                 break;

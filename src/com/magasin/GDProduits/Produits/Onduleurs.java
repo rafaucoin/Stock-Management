@@ -17,7 +17,7 @@ public class Onduleurs extends Produit{
         if (this == o) return true;
         if (!(o instanceof Onduleurs)) return false;
         Onduleurs onduleurs = (Onduleurs) o;
-        return nbprises == onduleurs.nbprises && capacite == onduleurs.capacite;
+        return nbprises == onduleurs.nbprises && capacite == onduleurs.capacite && onduleurs.Name.equalsIgnoreCase(Name);
     }
     @Override
     public void Affiche_Produit() {

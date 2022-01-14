@@ -1,5 +1,4 @@
 package com.magasin.GDProduits.Produits;
-
 public class Soundbar extends Produit{
     private String sound;
     private String connectivity;
