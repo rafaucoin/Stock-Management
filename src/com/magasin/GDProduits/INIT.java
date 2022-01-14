@@ -132,8 +132,8 @@ public class INIT {
             case 2 :
                 switch (Type) {
                     case 1 :
-                        System.out.print("Taille d'Ecran :");
-                        i1=Scn.nextInt();
+
+                        i1= LireInt("Taille d'Ecran :");
                         System.out.print("Quality d'image supporté :");
                         s4=Scn.next();
                         i3=LireInt("Quantité :");
@@ -171,25 +171,18 @@ public class INIT {
                     case 2 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        System.out.print("Ram en (GB) : ");
-                        i1 = Scn.nextInt();
-                        System.out.print("Stockage en (GB) : ");
-                        i2 = Scn.nextInt();
-                        System.out.print("Taille d'Ecran: ");
-                        i3 = Scn.nextInt();
-                        System.out.print("Quantité :");
-                        i4= Scn.nextInt();
+                        i1 = LireInt("Ram en (GB) : ");
+                        i2 = LireInt("Stockage en (GB) : ");
+                        i3 = LireInt("Taille d'Ecran: ");
+                        i4= LireInt("Quantité : ");
                         P=new ProduitEtNb(new Pc(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2,i3),i4);
                         break;
                     case 3 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        System.out.print("Ram en (GB) : ");
-                        i1 = Scn.nextInt();
-                        System.out.print("Stockage en (GB) : ");
-                        i2 = Scn.nextInt();
-                        System.out.print("Quantité :");
-                        i4= Scn.nextInt();
+                        i1 = LireInt("Ram en (GB) : ");
+                        i2 = LireInt("Stockage en (GB) : ");
+                        i4= LireInt("Quantité : ");
                         P=new ProduitEtNb(new Serveur(Cat.get(Selct).Nom_Cat,Cat.get(Selct).TypePro.get(Type),s1,s2,s3,s4,i1,i2),i4);
                         break;
 
@@ -229,23 +222,17 @@ public class INIT {
                     case 1 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        System.out.print("Ram en (GB) : ");
-                        i1 = Scn.nextInt();
-                        System.out.print("Stockage en (GB) : ");
-                        i2 = Scn.nextInt();
-                        System.out.print("Batterie (mAh) :");
-                        i4= Scn.nextInt();
+                        i1 = LireInt("Ram en (GB) : ");
+                        i2 = LireInt("Stockage en (GB) : ");
+                        i4= LireInt("Batterie (mAh) :");
                         P=new Tablette(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,i2,i4,s4);
                         break;
                     case 2 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        System.out.print("Ram en (GB) : ");
-                        i1 = Scn.nextInt();
-                        System.out.print("Stockage en (GB) : ");
-                        i2 = Scn.nextInt();
-                        System.out.print("Batterie (mAh) :");
-                        i4= Scn.nextInt();
+                        i1 = LireInt("Ram en (GB) : ");
+                        i2 = LireInt("Stockage en (GB) : ");
+                        i4= LireInt("Batterie (mAh) :");
                         P=new Phone(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,i2,i4,s4);
                         break;
                     /*case 3 : // MAYBE I'LL ADD SMART WATCH
@@ -255,22 +242,32 @@ public class INIT {
             case 2 :
                 switch (Type) {
                     case 1 :
-                        System.out.print("Taille d'Ecran :");
-                        i1=Scn.nextInt();
+
+                        i1=LireInt("Taille d'Ecran :");
                         System.out.print("Quality d'image supporté :");
                         s4=Scn.next();
                         P=new Tv(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,s4);
                         break;
                     case 2 :
-
+                        System.out.print("mode de connectivite :");
+                        s1=Scn.next();
+                        System.out.print("mode de son :");
+                        s4=Scn.next();
+                        P=new Soundbar(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),s1,s4);
                         break;
                 }
                 break;
             case 3 :
                 switch (Type) {
                     case 1 :
+                        i1=LireInt("mode de connectivite :");
+                        i4=LireInt("mode de son :");
+                        P=new Climatiseur(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,i4);
                         break;
                     case 2 :
+                        System.out.print("mode de son :");
+                        s4=Scn.next();
+                        P=new Congelateur(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),s4);
                         break;
                 }
                 break;
@@ -280,23 +277,17 @@ public class INIT {
                     case 2 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        System.out.print("Ram en (GB) : ");
-                        i1 = Scn.nextInt();
-                        System.out.print("Stockage en (GB) : ");
-                        i2 = Scn.nextInt();
-                        System.out.print("Taille d'Ecran: ");
-                        i3 = Scn.nextInt();
+                        i1 = LireInt("Ram en (GB) : ");
+                        i2 = LireInt("Stockage en (GB) : ");
+                        i3 = LireInt("Taille d'Ecran: ");
                         P=new Pc(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,i2,i3,s4);
                         break;
                     case 3 :
                         System.out.print("Cpu : ");
                         s4 = Scn.next();
-                        System.out.print("Ram en (GB) : ");
-                        i1 = Scn.nextInt();
-                        System.out.print("Stockage en (GB) : ");
-                        i2 = Scn.nextInt();
-                        System.out.print("Taille d'Ecran: ");
-                        i3 = Scn.nextInt();
+                        i1 = LireInt("Ram en (GB) : ");
+                        i2 = LireInt("Stockage en (GB) : ");
+                        i3 = LireInt("Taille d'Ecran: ");
                         P=new Serveur(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,i2,s4);
                         break;
                 }
