@@ -15,7 +15,7 @@ public class Congelateur extends Produit{
         if (this == o) return true;
         if (!(o instanceof Congelateur)) return false;
         Congelateur that = (Congelateur) o;
-        return Objects.equals(energie, that.energie);
+        return energie.equalsIgnoreCase(that.energie);
     }
 //ter
 }

@@ -17,7 +17,7 @@ public class Onduleurs extends Produit{
         if (this == o) return true;
         if (!(o instanceof Onduleurs)) return false;
         Onduleurs onduleurs = (Onduleurs) o;
-        return nbprises == this.nbprises && capacite == this.capacite;
+        return nbprises == onduleurs.nbprises && capacite == onduleurs.capacite;
     }
 //ter
 }

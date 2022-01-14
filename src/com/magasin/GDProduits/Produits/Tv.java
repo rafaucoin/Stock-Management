@@ -9,5 +9,11 @@ public class Tv extends Produit {
         this.screen = screen;
         this.quality = quality;
     }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Soundbar)) return false;
+        Tv tv = (Tv) o;
+        return screen == tv.screen && quality == tv.quality;
+    }
     //ter
 }

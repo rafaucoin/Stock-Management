@@ -17,7 +17,7 @@ public class Soundbar extends Produit{
         if (this == o) return true;
         if (!(o instanceof Soundbar)) return false;
         Soundbar soundbar = (Soundbar) o;
-        return Objects.equals(sound, soundbar.sound) && Objects.equals(connectivity, soundbar.connectivity);
+        return sound.equalsIgnoreCase(soundbar.sound) && connectivity.equalsIgnoreCase(soundbar.connectivity);
     }
 
 }
