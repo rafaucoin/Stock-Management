@@ -1,12 +1,9 @@
 package com.magasin.GDProduits.Produits;
-
 import java.util.Objects;
-
 public class Congelateur extends Produit{
     private String energie;
-
-    public Congelateur(String name, String ref, String type, String descriptive, int NbProduit, String energie) {
-        super(name, ref, type, descriptive, NbProduit);
+    public Congelateur(String Cat,String name, String ref, String type, String descriptive, int NbProduit, String energie) {
+        super(Cat, name, ref, type, descriptive, NbProduit);
         this.energie = energie;
     }
 
@@ -15,7 +12,6 @@ public class Congelateur extends Produit{
         if (this == o) return true;
         if (!(o instanceof Congelateur)) return false;
         Congelateur that = (Congelateur) o;
-        return Objects.equals(energie, that.energie);
+        return that.energie.equalsIgnoreCase(energie);
     }
-//ter
 }

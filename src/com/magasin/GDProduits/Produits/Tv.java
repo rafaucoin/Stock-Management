@@ -3,13 +3,13 @@ package com.magasin.GDProduits.Produits;
 public class Tv extends Produit{
     private int screenSize;
     private String quality;
-    public Tv(String Type, String Name, String Ref, String Descriptive, String quality,int Quent, int screenSize) {
-        super(Name, Ref, Type, Descriptive,Quent);
+    public Tv(String Cat,String Type, String Name, String Ref, String Descriptive, String quality,int Quent, int screenSize) {
+        super(Cat, Name, Ref, Type, Descriptive, Quent);
         this.quality = quality;
         this.screenSize = screenSize;
     }
-    public Tv(String name, String type, int screenSize, String quality) {
-        super(name, type);
+    public Tv(String Cat,String name, String type, int screenSize, String quality) {
+        super(Cat, name, type);
         this.screenSize = screenSize;
         this.quality = quality;
     }

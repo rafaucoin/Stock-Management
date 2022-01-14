@@ -2,15 +2,15 @@ package com.magasin.GDProduits.Produits;
 public class Pc extends Produit {
     private int Ram,Stockage, screen;
     private String Cpu;
-    public Pc(String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int NbProduit, int screen) {
-        super(Name,Ref,Type, Descriptive,NbProduit);
+    public Pc(String Cat,String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int Quent, int screen) {
+        super(Cat, Name, Ref, Type, Descriptive, Quent);
         this.Cpu=Cpu;
         this.Ram=Ram;
         this.Stockage=Stockage;
         this.screen = screen;
     }
-    public Pc(String name, String type, int ram, int stockage, int screen, String cpu) {
-        super(name, type);
+    public Pc(String Cat,String name, String type, int ram, int stockage, int screen, String cpu) {
+        super(Cat, name, type);
         Ram = ram;
         Stockage = stockage;
         this.screen = screen;
@@ -31,5 +31,4 @@ public class Pc extends Produit {
         Pc pc = (Pc) o;
         return Ram == pc.Ram && Stockage == pc.Stockage && Cpu.equalsIgnoreCase(pc.Cpu) && Name.equalsIgnoreCase(pc.Name) && screen == pc.screen;
     }
-    //ter
 }

@@ -8,7 +8,7 @@ public class Agent {
         String Ref=scn.next();
         for (int i = 1; i < INIT.Cat.size(); i++) {
             for (Produit M : INIT.Cat.get(i).Produits) {
-                if(M.Ref.equalsIgnoreCase(Ref))
+                if(M.Ref.equalsIgnoreCase(Ref) && M.getNbProduit()!=0)
                     return M;
             }
         }
@@ -28,5 +28,39 @@ public class Agent {
             INIT.Cat.get(Selec).Produits.add(P);
 
     }
+    public void Action_Achat(Client c) {
+        Produit P=Recherche_Ref();
+        if(c.)
+        switch (P.Categorie) {
+            case "Mobiles":
+            case "Informatiques" :
 
+                break;
+            case "Electromenager":
+            case "Electroniques":
+
+                break;
+            case "Kits solaires" :
+
+                break;
+        }
+        P.DecNbProduit();
+    }
+    public void Action_Retour(int Nombre) {
+        Produit P=Recherche_Ref();
+        switch (P.Categorie) {
+            case "Mobiles":
+            case "Informatiques" :
+
+                break;
+            case "Electromenager":
+            case "Electroniques":
+
+                break;
+            case "Kits solaires" :
+
+                break;
+        }
+        P.IncNbProduit(Nombre);
+    }
 }

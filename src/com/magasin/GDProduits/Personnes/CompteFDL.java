@@ -25,6 +25,6 @@ public class CompteFDL implements CompteFidélité {
     }
     @Override
     public void Affiche_Points() {
-
+    System.out.println("Points ");
     }
 }

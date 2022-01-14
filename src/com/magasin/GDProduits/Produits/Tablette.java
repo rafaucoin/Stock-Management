@@ -1,14 +1,21 @@
 package com.magasin.GDProduits.Produits;
 public class Tablette extends Produit {
-    private int Ram,Stockage;
+    private int Ram,Stockage,Batterie;
     private String Cpu;
-    public Tablette(String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int NbProduit) {
-        super(Name,Ref,Type, Descriptive,NbProduit);
+    public Tablette(String Cat,String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int NbProduit,int Batterie) {
+        super(Cat, Name, Ref, Type, Descriptive, NbProduit);
         this.Cpu=Cpu;
         this.Ram=Ram;
         this.Stockage=Stockage;
+        this.Batterie=Batterie;
     }
-
+    public Tablette(String Cat,String name, String type, int ram, int stockage, int batterie, String cpu) {
+        super(Cat, name, type);
+        Ram = ram;
+        Stockage = stockage;
+        Batterie = batterie;
+        Cpu = cpu;
+    }
     @Override
     public void Affiche_Produit() {
     }
@@ -23,6 +30,6 @@ public class Tablette extends Produit {
         if (this == o) return true;
         if (!(o instanceof Tablette)) return false;
         Tablette tablette = (Tablette) o;
-        return Ram == tablette.Ram && Stockage == tablette.Stockage && Cpu.equalsIgnoreCase(tablette.Cpu) && Name.equalsIgnoreCase(tablette.Name) && Ref.equalsIgnoreCase(tablette.Ref);
+        return Ram == tablette.Ram && Stockage == tablette.Stockage && Cpu.equalsIgnoreCase(tablette.Cpu) && Name.equalsIgnoreCase(tablette.Name);
     }
 }
