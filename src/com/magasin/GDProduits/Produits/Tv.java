@@ -1,10 +1,9 @@
 package com.magasin.GDProduits.Produits;
-
 public class Tv extends Produit{
     private int screenSize;
     private String quality;
-    public Tv(String Cat,String Type, String Name, String Ref, String Descriptive, String quality,int Quent, int screenSize) {
-        super(Cat, Name, Ref, Type, Descriptive, Quent);
+    public Tv(String Cat,String Type, String Name, String Ref, String Descriptive, String quality, int screenSize) {
+        super(Cat, Name, Ref, Type, Descriptive);
         this.quality = quality;
         this.screenSize = screenSize;
     }
@@ -13,10 +12,9 @@ public class Tv extends Produit{
         this.screenSize = screenSize;
         this.quality = quality;
     }
-    public void Affiche_Produit() {
-    }
     @Override
-    public void finalize() {
+    public void Affiche_Produit() {
+        super.Affiche_Produit();
 
     }
     @Override

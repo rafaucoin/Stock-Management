@@ -2,8 +2,8 @@ package com.magasin.GDProduits.Produits;
 public class Tablette extends Produit {
     private int Ram,Stockage,Batterie;
     private String Cpu;
-    public Tablette(String Cat,String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage, int NbProduit,int Batterie) {
-        super(Cat, Name, Ref, Type, Descriptive, NbProduit);
+    public Tablette(String Cat,String Type, String Name, String Ref, String Descriptive, String Cpu, int Ram, int Stockage,int Batterie) {
+        super(Cat, Name, Ref, Type, Descriptive);
         this.Cpu=Cpu;
         this.Ram=Ram;
         this.Stockage=Stockage;
@@ -19,12 +19,6 @@ public class Tablette extends Produit {
     @Override
     public void Affiche_Produit() {
     }
-
-    @Override
-    public void finalize() {
-
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
