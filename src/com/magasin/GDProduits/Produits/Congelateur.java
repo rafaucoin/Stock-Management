@@ -2,8 +2,8 @@ package com.magasin.GDProduits.Produits;
 
 public class Congelateur extends Produit{
     private String energie;
-    public Congelateur(String Cat,String name, String ref, String type, String descriptive, String energie) {
-        super(Cat, name, ref, type, descriptive);
+    public Congelateur(String Cat,String name, String Ref, String type, String descriptive, String energie) {
+        super(Cat, name, Ref, type, descriptive);
         this.energie = energie;
     }
     public Congelateur(String Categorie, String name, String type, String energie) {

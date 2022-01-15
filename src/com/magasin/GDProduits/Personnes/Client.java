@@ -16,8 +16,8 @@ public class Client {
     public final ArrayList<ProduitEtNb> Reservation = new ArrayList();
     public Produit Recherche_Produit() { // ttbdel if kyn name
         int Selec=INIT.Select_Categorie();
-        int Type=INIT.Selection_ProduitType(Selec);
-        Produit P = INIT.LireProduitClient(Selec,Type);
+        int Typ=INIT.Selection_ProduitType(Selec);
+        Produit P = INIT.LireProduitClient(Selec,Typ);
         boolean v = false;
             for (ProduitEtNb M : INIT.Cat.get(Selec).Produits) {
                 if (M.Produit.Type.equalsIgnoreCase(P.Type) && M.equals(P) && M.getNombreProduit()!=0) {

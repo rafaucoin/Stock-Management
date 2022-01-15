@@ -15,7 +15,6 @@ public class Agent {
         }
         return null;
     }
-
     public void Ajoute_Produit() {
         boolean found = false;
         int Selec = INIT.Select_Categorie();
@@ -30,9 +29,9 @@ public class Agent {
         }
         if (!found)
             INIT.Cat.get(Selec).Produits.add(P);
+            Responsable.NoPricesProducts.add(P.Produit);
 
     }
-
     public void Action_Achat(Client c) {
         ProduitEtNb P = Recherche_Ref();
         if (c.Compte == null)
@@ -40,13 +39,11 @@ public class Agent {
         c.Compte.Increment_Points(P.getNombreProduit(), P.Produit.Categorie);
         P.DecNbby1();
     }
-
     public void Action_Retour(Client c) {
         ProduitEtNb P = Recherche_Ref();
         c.Compte.Decrement_Points(P.Produit.getPrice(), P.Produit.Categorie);
         P.incNbProduit(1);
     }
-
     public void Creation_Account(Client c) {
         if (c.Compte != null) {
             System.out.println("Compte Existe Déja");
@@ -56,7 +53,6 @@ public class Agent {
             System.out.println("Mot de Pass : " + c.Compte.getPassword());
         }
     }
-
     public void Changement_Pass(Client c) {
         if (c.Compte == null)
             System.out.println("il a pas un compte");
@@ -66,7 +62,6 @@ public class Agent {
             System.out.println("Le nouveau Mot de Pass est : " + c.Compte.getPassword());
         }
     }
-
     private class PasswordGenerator {
         public static String generateRandomPassword(int len) {
             String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi"
