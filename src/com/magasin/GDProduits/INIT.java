@@ -28,7 +28,7 @@ public class INIT {
         Cat.get(4).Add_New_ProType("Serveur");
         Cat.put(5,new Categorie("Kits solaires"));
         // add Products Names Of Mobile Kits ****
-        Cat.get(5).Add_New_ProType("Onduleurs");
+        Cat.get(5).Add_New_ProType("Onduleur");
         Cat.get(5).Add_New_ProType("batterie solaire");
     }
     public static int Select_Categorie() {
@@ -233,8 +233,6 @@ public class INIT {
                         i4= LireInt("Batterie (mAh) :");
                         P=new Phone(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,i2,i4,s4);
                         break;
-                    /*case 3 : // MAYBE I'LL ADD SMART WATCH
-                        break; */
                 }
                 break;
             case 2 :
@@ -293,8 +291,15 @@ public class INIT {
             case 5 :
                 switch (Type) {
                     case 1 :
+                        i1=LireInt("Nombre des Prises : ");
+                        i2=LireInt("Capacité : ");
+                        P=new Onduleurs(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i1,i2);
                         break;
                     case 2 :
+                        i2=LireInt("Capacité : ");
+                        System.out.println("Nombre de Cells : ");
+                        s4=Scn.next();
+                        P=new Batterie(Cat.get(Selct).Nom_Cat,s1,Cat.get(Selct).TypePro.get(Type),i2,s4);
                         break;
                 }
                 break;

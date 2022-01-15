@@ -22,7 +22,8 @@ public class Batterie extends Produit {
     @Override
     public void Affiche_Produit() {
         super.Affiche_Produit();
-        
+        System.out.println("Capacity : "+capacity);
+        System.out.println("Celles : "+cells);
 
     }
 }

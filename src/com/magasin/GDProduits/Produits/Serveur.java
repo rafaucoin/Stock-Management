@@ -25,6 +25,8 @@ public class Serveur extends Produit {
     @Override
     public void Affiche_Produit() {
         super.Affiche_Produit();
-
+        System.out.println("Cpu : "+Cpu);
+        System.out.println("Ram (gb)  : "+Ram);
+        System.out.println("Stockage  : "+Stockage);
     }
 }

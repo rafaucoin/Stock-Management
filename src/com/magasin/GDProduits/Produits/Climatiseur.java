@@ -21,6 +21,8 @@ public class Climatiseur extends Produit{
     @Override
     public void Affiche_Produit() {
         super.Affiche_Produit();
+        System.out.println("Capacite : "+capacite);
+        System.out.println("Sonore : "+sonore);
 
     }
 }

@@ -18,6 +18,10 @@ public class Tablette extends Produit {
     }
     @Override
     public void Affiche_Produit() {
+        System.out.println("Cpu : "+Cpu);
+        System.out.println("Ram (gb)  : "+Ram);
+        System.out.println("Stockage (gb) : "+Stockage);
+        System.out.println("Batterie (mAh) : "+Batterie);
     }
     @Override
     public boolean equals(Object o) {

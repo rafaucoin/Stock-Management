@@ -22,6 +22,7 @@ public class Onduleurs extends Produit{
     @Override
     public void Affiche_Produit() {
         super.Affiche_Produit();
-
+        System.out.println("Nombre des Prises : "+nbprises);
+        System.out.println("Capacité : "+capacite);
     }
 }

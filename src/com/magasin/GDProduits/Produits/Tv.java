@@ -15,7 +15,8 @@ public class Tv extends Produit{
     @Override
     public void Affiche_Produit() {
         super.Affiche_Produit();
-
+        System.out.println("Taille d'ecran : " + screenSize);
+        System.out.println("Quality supporté : " + quality);
     }
     @Override
     public boolean equals(Object o) {

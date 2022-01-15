@@ -20,6 +20,6 @@ public class Congelateur extends Produit{
     @Override
     public void Affiche_Produit() {
         super.Affiche_Produit();
-
+        System.out.println("Enèrgie : "+energie);
     }
 }
