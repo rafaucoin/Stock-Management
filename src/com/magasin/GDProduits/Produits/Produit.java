@@ -20,10 +20,11 @@ public  class Produit implements Affichage {
         Type = type;
         Ref=" ";
     }
-    public  void Affiche_Produit() {
+    public void Affiche_Produit() {
         System.out.println("Name :" + Name);
         System.out.println("Référence :" + Ref);
         System.out.println("Description :" + Descriptive);
+        System.out.println("Prix :" + price);
     }
     public void setPrice(double price) {
         this.price = price;

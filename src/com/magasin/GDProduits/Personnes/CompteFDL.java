@@ -14,21 +14,6 @@ public class CompteFDL implements CompteFidélité {
     public void setPassword(String password) {
         Password = password;
     }
-    public void Remise_a_Zero(String Cat) {
-        switch (Cat) {
-            case "Mobiles":
-            case "Informatiques" :
-                PIM=0;
-                break;
-            case "Electromenager":
-            case "Electroniques":
-                PELE=0;
-                break;
-            case "Kits solaires" :
-                PS=0;
-                break;
-        }
-    }
     public void Affiche_Points() {
     System.out.println("Vos Points :");
     System.out.println("Cumule de produits informatiques et mobiles: "+PIM);
@@ -64,5 +49,37 @@ public class CompteFDL implements CompteFidélité {
                 PS-=price;
                 break;
         }
+    }
+    public double Reduction(String Cat,Double Price) {
+        switch (Cat) {
+            case "Mobiles":
+            case "Informatiques" :
+                Price-=Price*tauxPIM/100;
+                PIM=0;
+                break;
+            case "Electromenager":
+            case "Electroniques":
+                Price-=Price*tauxPELE/100;
+                PELE=0;
+                break;
+            case "Kits solaires" :
+                Price-=Price*tauxPS/100;
+                PS=0;
+                break;
+        }
+        return Price;
+    }
+    public double Return_PointCat(String Cat) {
+        switch (Cat) {
+            case "Mobiles":
+            case "Informatiques" :
+                return PIM;
+            case "Electromenager":
+            case "Electroniques":
+                return PELE;
+            case "Kits solaires" :
+                return PS;
+        }
+        return -1;
     }
 }

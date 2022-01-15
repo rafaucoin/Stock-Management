@@ -21,7 +21,7 @@ public class Phone extends Produit {
         if (this == o) return true;
         if (!(o instanceof Phone)) return false;
         Phone phone = (Phone) o;
-        return Ram == phone.Ram && Stockage == phone.Stockage && Cpu.equalsIgnoreCase(phone.Cpu) && Name.equalsIgnoreCase(phone.Name);
+        return Ram == phone.Ram && Stockage == phone.Stockage && Cpu.equalsIgnoreCase(phone.Cpu) && Name.equalsIgnoreCase(phone.Name) && phone.Batterie==Batterie;
     }
     @Override
     public void Affiche_Produit() {

@@ -12,7 +12,6 @@ public class INIT {
         // add Products Names Of Mobile Cat ****
         Cat.get(1).Add_New_ProType("Tablette tactile");
         Cat.get(1).Add_New_ProType("Telephone mobile");
-        Cat.get(1).Add_New_ProType("Smartwatch");
         Cat.put(2,new Categorie("Electroniques"));
         // add Products Names Of Elec Cat ****
         Cat.get(2).Add_New_ProType("Televiseur");
@@ -85,6 +84,23 @@ public class INIT {
             try {
                 System.out.print(msg);
                 ii = i.nextInt();
+            } catch (InputMismatchException e) {
+                v=false;
+                System.out.println("Veuiller Vous Entrez Des Chiffres");
+                i.nextLine();
+            }
+        }while(!v);
+        return ii;
+    }
+    public static double LireDouble(String msg) {
+        Scanner i=new Scanner(System.in);
+        boolean v;
+        double ii=0;
+        do {
+            v=true;
+            try {
+                System.out.print(msg);
+                ii = i.nextDouble();
             } catch (InputMismatchException e) {
                 v=false;
                 System.out.println("Veuiller Vous Entrez Des Chiffres");

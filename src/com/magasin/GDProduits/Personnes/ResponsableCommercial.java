@@ -1,23 +1,23 @@
 package com.magasin.GDProduits.Personnes;
-import com.magasin.GDProduits.Exceptions.PrixNegativeException;
+import com.magasin.GDProduits.Exceptions.NombreNegativeException;
 import com.magasin.GDProduits.Exceptions.SelectionOutOfBondException;
 import com.magasin.GDProduits.INIT;
 import com.magasin.GDProduits.ProduitEtNb;
 import com.magasin.GDProduits.Produits.Produit;
 import java.util.*;
-public class Responsable {
+public class ResponsableCommercial{
     public  static  Queue<Produit> NoPricesProducts = new LinkedList<>();
     Map<Integer,Produit> PrixChangePro = new HashMap<>();
     public void Change_Prices() {
         Scanner scn=new Scanner(System.in);
         boolean v,run;
         double price = 0;
-        int i = 1,choix,S=0;
+        Integer i =1,choix,S=0;
         int Select=INIT.Select_Categorie();
         int Typ=INIT.Selection_ProduitType(Select);
         for(ProduitEtNb P: INIT.Cat.get(Select).Produits) {
         if(P.Produit.Type.equalsIgnoreCase(INIT.Cat.get(Select).TypePro.get(Typ))) {
-            PrixChangePro.put(i, P.Produit); i++;
+            PrixChangePro.put(i,P.Produit); i++;
         }
         }
         run=true;
@@ -42,23 +42,25 @@ public class Responsable {
                             v = false;
                             scn.next();
                         }
+
                     } while (!v);
+
                     PrixChangePro.get(S).Affiche_Produit();
                     do {
                         v = true;
                         try {
-                            System.out.println("Donnez le Prix de ce Produit : ");
-                            price = scn.nextDouble();
+                            price = INIT.LireDouble("Donnez le Prix de ce Produit : ");
                             if (price < 0)
-                                throw new PrixNegativeException();
-                        } catch (PrixNegativeException e) {
+                                throw new NombreNegativeException();
+                        } catch (NombreNegativeException e) {
                             System.out.println(e.getMessage());
                             v = false;
                         }
+                        PrixChangePro.get(S).setPrice(price);
                     } while (!v);
                     break;
                 case 0:
-                    run = false;
+                    run = false; break;
                 default:
                     System.out.println("Invalid Selection");
                     break;
@@ -77,8 +79,8 @@ public class Responsable {
                     System.out.println("Donnez le Prix de ce Produit : ");
                     price = scn.nextDouble();
                     if (price < 0)
-                        throw new PrixNegativeException();
-                } catch (PrixNegativeException e) {
+                        throw new NombreNegativeException();
+                } catch (NombreNegativeException e) {
                     System.out.println(e.getMessage());
                     v = false;
                 }

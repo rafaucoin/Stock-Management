@@ -34,4 +34,12 @@ public class ProduitEtNb {
     public void DecNbby1() {
         this.NombreProduit--;
     }
+    public void DecNbbyN(int N) {
+        this.NombreProduit-=N;
+    }
+    public void Affichage_Produit() {
+        this.Produit.Affiche_Produit();
+        System.out.println("Quantité : "+NombreProduit);
+
+    }
 }
