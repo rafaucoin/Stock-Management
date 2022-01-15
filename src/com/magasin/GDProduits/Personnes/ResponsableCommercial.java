@@ -76,8 +76,7 @@ public class ResponsableCommercial{
             do {
                 v = true;
                 try {
-                    System.out.println("Donnez le Prix de ce Produit : ");
-                    price = scn.nextDouble();
+                    price = INIT.LireDouble("Donnez le Prix de ce Produit : ");
                     if (price < 0)
                         throw new NombreNegativeException();
                 } catch (NombreNegativeException e) {
